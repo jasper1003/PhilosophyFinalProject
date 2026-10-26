@@ -37,7 +37,8 @@ image char n = Transform("images/char_n.png", zoom=0.48, nearest=True)
 image char q = Transform("images/char_q.png", zoom=0.48, nearest=True)
 image char ai = Transform("images/char_ai.png", zoom=0.48, nearest=True)
 
-# 氛圍背景佔位
+# 氛圍背景設定
+image bg earth_crisis = "images/bg_earth_crisis.png"
 image bg shuttle_cabin = Solid("#10141a")
 image bg shuttle_window = Solid("#0f2a24")
 image bg airlock = Solid("#181f26")
@@ -82,11 +83,17 @@ label start:
 
     c "（我注視著那條在掃描儀上如同神經網絡般蜿蜒的藍色光帶。）"
 
+    scene bg earth_crisis
+    with dissolve
+
     c "（在地球，這條光帶代表的是地底防護城未被掐斷的氧氣閥門，是兩百億人不必在無聲斷電中迎來寒冬的可能。）"
 
     c "（出發前，聯合財團的代表將合約推到我面前時，沒有人談論利潤。他們只給了我一張全球電網熄滅的倒數時鐘。）"
 
     c "（這場航行花費了一千兩百億，耗盡了三個工業大洲整整一年的鋼鐵配額。這已經超越了任何一場豪賭......這是一張無法退票的生存支票。）"
+
+    scene bg shuttle_window
+    with dissolve
 
     c "更新先遣地面站的狀況。"
 
