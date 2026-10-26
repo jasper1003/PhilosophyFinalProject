@@ -1,0 +1,454 @@
+################################################################################
+## 初始化
+################################################################################
+
+## init offset 語句導致此文件中的初始化語句在任何其他文件中的 init 語句之前執
+## 行。
+init offset = -2
+
+## 呼叫 gui.init 將樣式重設為合理的預設值，並設定遊戲的寬度和高度
+init python:
+    gui.init(1280, 720)
+
+## 啟用螢幕或變換中無效或不穩定屬性的檢查
+define config.check_conflicting_properties = True
+
+
+################################################################################
+## GUI 設定變數
+################################################################################
+
+
+## 顔色 ##########################################################################
+##
+## 介面中文字的顏色
+
+## 整個介面中使用的強調色，用於標記和突出顯示文字
+define gui.accent_color = '#0099cc'
+
+## 當文字按鈕既未被選取也未被懸停時所使用的顏色
+define gui.idle_color = '#888888'
+
+## 小顏色適用於小文字，需要更亮/更暗才能達到與普通文字相同的效果
+define gui.idle_small_color = '#aaaaaa'
+
+## 用於懸停的按鈕和欄的顏色
+define gui.hover_color = '#66c1e0'
+
+## 當文字按鈕被選取但未獲得焦點時所使用的顏色。如果按鈕是目前畫面或首選項值，則
+## 按鈕將被選取
+define gui.selected_color = '#ffffff'
+
+## 無法選擇文字按鈕時使用的顏色
+define gui.insensitive_color = '#8888887f'
+
+## 顏色用於未填充的條形部分。這些顏色不直接使用，而是在重新生成條形影像檔案時使
+## 用
+define gui.muted_color = '#003d51'
+define gui.hover_muted_color = '#005b7a'
+
+## 用於對話和選單選擇文字的顏色
+define gui.text_color = '#ffffff'
+define gui.interface_text_color = '#ffffff'
+
+
+## 字形和字形大小 #####################################################################
+
+## 對話文字字型
+define gui.text_font = "font.ttc"
+
+## 角色名稱字型
+define gui.name_text_font = "font.ttc"
+
+## 介面按鈕字型
+define gui.interface_text_font = "font.ttc"
+
+## 正常對話文字的大小
+define gui.text_size = 22
+
+## 角色名稱的大小
+define gui.name_text_size = 30
+
+## 遊戲使用者介面中的文字的大小
+define gui.interface_text_size = 22
+
+## 遊戲使用者介面中標籤的大小
+define gui.label_text_size = 24
+
+## 通知螢幕上的文字大小
+define gui.notify_text_size = 16
+
+## 遊戲標題的大小
+define gui.title_text_size = 50
+
+
+## 主選單和遊戲選單 ####################################################################
+
+## 用於主選單和遊戲選單的影像
+define gui.main_menu_background = "gui/main_menu.png"
+define gui.game_menu_background = "gui/game_menu.png"
+
+
+## 對話 ##########################################################################
+##
+## 這些變數控制對話如何一次一行地顯示在螢幕上
+
+## 包含對話的文字框的高度
+define gui.textbox_height = 185
+
+## 文字框在螢幕上垂直的位置。0.0 是頂端，0.5 是中心，1.0 是底端
+define gui.textbox_yalign = 1.0
+
+
+## 對話角色的名字相對於文字框的位置。這些可以是從左側或頂端開始的整數像素，也可
+## 以是到中心的 0.5 個像素
+define gui.name_xpos = 220
+define gui.name_ypos = 0
+
+## 角色名稱的水平對齊方式。左對齊可以為 0.0，居中對齊可以為 0.5，右對齊可以為
+## 1.0
+define gui.name_xalign = 0.0
+
+## 包含角色名稱的框的寬度、高度和邊框，或無以自動調整其大小
+define gui.namebox_width = None
+define gui.namebox_height = None
+
+## 包含角色名稱的框的邊框，按左、上、右、下順序排列
+define gui.namebox_borders = Borders(5, 5, 5, 5)
+
+## 如果為 True ，名稱框的背景將平鋪，如果為 False ，則名稱框的背景將縮放
+define gui.namebox_tile = False
+
+
+## 對話相對於文字框的位置。這些可以是相對於文字方塊左側或頂端的整數像素，或相對
+## 於中心的 0.5 個像素
+define gui.dialogue_xpos = 220
+define gui.dialogue_ypos = 50
+
+## 對話文字的最大寬度，以像素為單位
+define gui.dialogue_width = 980
+
+## 對話文字的水平對齊方式。左對齊可以為 0.0，居中對齊可以為 0.5，右對齊可以為
+## 1.0
+define gui.dialogue_text_xalign = 0.0
+
+
+## 按鈕 ##########################################################################
+##
+## 這些變數與 gui/button 中的影像檔案一起控制按鈕顯示方式的各個方面
+
+## 按鈕的寬度和高度，以像素為單位。如果沒有，Ren'Py 會計算其尺寸
+define gui.button_width = None
+define gui.button_height = None
+
+## 按鈕兩側的邊框，依左、上、右、下順序排列
+define gui.button_borders = Borders(4, 4, 4, 4)
+
+## 如果為 True ，背景影像將平鋪。如果為 False ，背景影像將線性縮放
+define gui.button_tile = False
+
+## 按鈕使用的字型
+define gui.button_text_font = gui.interface_text_font
+
+## 按鈕使用的文字大小
+define gui.button_text_size = gui.interface_text_size
+
+## 各種狀態下按鈕文字的顏色
+define gui.button_text_idle_color = gui.idle_color
+define gui.button_text_hover_color = gui.hover_color
+define gui.button_text_selected_color = gui.selected_color
+define gui.button_text_insensitive_color = gui.insensitive_color
+
+## 按鈕文字的水平對齊方式。（0.0 為左，0.5 為中，1.0 為右）
+define gui.button_text_xalign = 0.0
+
+
+## 這些變數會覆寫不同類型按鈕的設定。請參閱 gui 文件以了解可用按鈕的類型以及每個
+## 按鈕的用途
+##
+## 預設介面使用這些自訂設定：
+
+define gui.radio_button_borders = Borders(18, 4, 4, 4)
+
+define gui.check_button_borders = Borders(18, 4, 4, 4)
+
+define gui.confirm_button_text_xalign = 0.5
+
+define gui.page_button_borders = Borders(10, 4, 10, 4)
+
+define gui.quick_button_borders = Borders(10, 4, 10, 0)
+define gui.quick_button_text_size = 14
+define gui.quick_button_text_idle_color = gui.idle_small_color
+define gui.quick_button_text_selected_color = gui.accent_color
+
+## 您也可以透過新增正確命名的變數來新增自己的自訂設定。例如，您可以取消註解以下
+## 行以設定導覽按鈕的寬度
+
+# define gui.navigation_button_width = 250
+
+
+## 選項按鈕 ########################################################################
+##
+## 選擇按鈕用於遊戲內選單
+
+define gui.choice_button_width = 790
+define gui.choice_button_height = None
+define gui.choice_button_tile = False
+define gui.choice_button_borders = Borders(100, 5, 100, 5)
+define gui.choice_button_text_font = gui.text_font
+define gui.choice_button_text_size = gui.text_size
+define gui.choice_button_text_xalign = 0.5
+define gui.choice_button_text_idle_color = '#888888'
+define gui.choice_button_text_hover_color = "#ffffff"
+define gui.choice_button_text_insensitive_color = '#8888887f'
+
+
+## 存檔槽按鈕 #######################################################################
+##
+## 存檔槽按鈕是一種特殊類型的按鈕。它包含縮圖和描述儲存槽內容的文字。與其他類型
+## 的按鈕一樣，儲存槽使用 gui/button 中的影像檔案
+
+## 儲存槽按鈕
+define gui.slot_button_width = 276
+define gui.slot_button_height = 206
+define gui.slot_button_borders = Borders(10, 10, 10, 10)
+define gui.slot_button_text_size = 14
+define gui.slot_button_text_xalign = 0.5
+define gui.slot_button_text_idle_color = gui.idle_small_color
+define gui.slot_button_text_selected_idle_color = gui.selected_color
+define gui.slot_button_text_selected_hover_color = gui.hover_color
+
+## 儲存槽使用的縮圖的寬度和高度
+define config.thumbnail_width = 256
+define config.thumbnail_height = 144
+
+## 儲存槽網格中的列數和行數
+define gui.file_slot_cols = 3
+define gui.file_slot_rows = 2
+
+
+## 位置和間距 #######################################################################
+##
+## 這些變數控制各種使用者介面元素的位置和間距
+
+## 導覽按鈕左側一般相對於螢幕左側的位置
+define gui.navigation_xpos = 40
+
+## 跳過指示器的垂直位置
+define gui.skip_ypos = 10
+
+## 通知畫面的垂直位置
+define gui.notify_ypos = 45
+
+## 選單選項之間的間距
+define gui.choice_spacing = 22
+
+## 主選單和遊戲選單導覽部分中的按鈕
+define gui.navigation_spacing = 4
+
+## 控制首選項之間的間距
+define gui.pref_spacing = 10
+
+## 控制首選項按鈕之間的間距
+define gui.pref_button_spacing = 0
+
+## 存檔頁面按鈕之間的間距
+define gui.page_spacing = 0
+
+## 存檔槽之間的間距
+define gui.slot_spacing = 10
+
+## 主選單文字的位置
+define gui.main_menu_text_xalign = 1.0
+
+
+## 框架 ##########################################################################
+##
+## 當不存在覆蓋層或視窗時，這些變數控制可以包含使用者介面元件的框架的外觀
+
+## 通用框架
+define gui.frame_borders = Borders(4, 4, 4, 4)
+
+## 用作確認螢幕一部分的框架
+define gui.confirm_frame_borders = Borders(40, 40, 40, 40)
+
+## 用作跳過螢幕一部分的框架
+define gui.skip_frame_borders = Borders(16, 5, 50, 5)
+
+## 用作通知螢幕一部分的框架
+define gui.notify_frame_borders = Borders(16, 5, 40, 5)
+
+## 應該平鋪框架背景嗎？
+define gui.frame_tile = False
+
+
+## 條、捲軸和滑塊 #####################################################################
+##
+## 這些控制條、捲軸和滑塊的外觀和大小
+##
+## 預設 GUI 僅使用滑塊和垂直捲軸。所有其他捲軸僅在建立者編寫的螢幕中使用
+
+## 水平條、捲軸和滑塊的高度。垂直條、捲軸和滑塊的寬度
+define gui.bar_size = 25
+define gui.scrollbar_size = 12
+define gui.slider_size = 25
+
+## 如果需要條圖平鋪，則為 True。如果需要條圖線性縮放，則為 False
+define gui.bar_tile = False
+define gui.scrollbar_tile = False
+define gui.slider_tile = False
+
+## 水平邊框
+define gui.bar_borders = Borders(4, 4, 4, 4)
+define gui.scrollbar_borders = Borders(4, 4, 4, 4)
+define gui.slider_borders = Borders(4, 4, 4, 4)
+
+## 垂直邊框
+define gui.vbar_borders = Borders(4, 4, 4, 4)
+define gui.vscrollbar_borders = Borders(4, 4, 4, 4)
+define gui.vslider_borders = Borders(4, 4, 4, 4)
+
+## What to do with unscrollable scrollbars in the game menu. "hide" hides them,
+## while None shows them.
+define gui.unscrollable = "hide"
+
+
+## 歷史 ##########################################################################
+##
+## 歷史畫面顯示玩家已經閱讀過的對話
+
+## Ren'Py 將保留的對話歷史記錄區塊的數量
+define config.history_length = 250
+
+## 歷史畫面條目的高度，或設為 None 以犧牲效能為代價使高度可變
+define gui.history_height = 140
+
+## 在歷史畫面條目之間新增的額外空間。
+define gui.history_spacing = 0
+
+## 給予對話角色名稱的標籤的位置、寬度和對齊方式
+define gui.history_name_xpos = 155
+define gui.history_name_ypos = 0
+define gui.history_name_width = 155
+define gui.history_name_xalign = 1.0
+
+## 對話文字的位置、寬度和對齊方式
+define gui.history_text_xpos = 170
+define gui.history_text_ypos = 2
+define gui.history_text_width = 740
+define gui.history_text_xalign = 0.0
+
+
+## NVL-模式 ######################################################################
+##
+## NVL 模式畫面顯示 NVL 模式角色所說的對話
+
+## NVL 模式背景視窗的背景邊框
+define gui.nvl_borders = Borders(0, 10, 0, 20)
+
+## Ren'Py 將顯示的 NVL 模式條目的最大數量。當要顯示的條目多於此時，最舊的條目將
+## 被刪除。
+define gui.nvl_list_length = 6
+
+## NVL 模式條目的高度。將其設為 None 以使條目動態調整高度
+define gui.nvl_height = 115
+
+## 當 gui.nvl_height 為 None 時 NVL 模式條目之間的間距，以及 NVL 模式條目和選單
+## 之間的間距
+define gui.nvl_spacing = 10
+
+## 給予對話角色名稱的標籤的位置、寬度和對齊方式
+define gui.nvl_name_xpos = 430
+define gui.nvl_name_ypos = 0
+define gui.nvl_name_width = 150
+define gui.nvl_name_xalign = 1.0
+
+## 對話文字的位置、寬度和對齊方式
+define gui.nvl_text_xpos = 450
+define gui.nvl_text_ypos = 8
+define gui.nvl_text_width = 590
+define gui.nvl_text_xalign = 0.0
+
+## nvl_thought 文字的位置、寬度和對齊方式（由 nvl_narrator 字元表示的文字）
+define gui.nvl_thought_xpos = 240
+define gui.nvl_thought_ypos = 0
+define gui.nvl_thought_width = 780
+define gui.nvl_thought_xalign = 0.0
+
+## nvl menu_buttons 的位置
+define gui.nvl_button_xpos = 450
+define gui.nvl_button_xalign = 0.0
+
+
+## 在地化 #########################################################################
+
+## 這控制允許換行的位置。預設值適用於大多數語言。可用值的清單可以在 https://
+## www.renpy.org/doc/html/style_properties.html#style-property-language 中找到財
+## 產語言
+
+define gui.language = "unicode"
+
+
+################################################################################
+## 行動裝置
+################################################################################
+
+init python:
+
+    ## 這增加了快捷按鈕的大小，使它們在平板電腦和手機上更容易觸控
+    @gui.variant
+    def touch():
+
+        gui.quick_button_borders = Borders(40, 14, 40, 0)
+
+    ## 這會改變各種 GUI 元素的大小和間距，以確保它們在手機上輕鬆可見
+    @gui.variant
+    def small():
+
+        ## 字形大小
+        gui.text_size = 30
+        gui.name_text_size = 36
+        gui.notify_text_size = 25
+        gui.interface_text_size = 30
+        gui.button_text_size = 30
+        gui.label_text_size = 34
+
+        ## 調整文字框的位置
+        gui.textbox_height = 240
+        gui.name_xpos = 80
+        gui.dialogue_xpos = 90
+        gui.dialogue_width = 1100
+
+        ## 改變各種東西的大小和間距。
+        gui.slider_size = 36
+
+        gui.choice_button_width = 1240
+        gui.choice_button_text_size = 30
+
+        gui.navigation_spacing = 20
+        gui.pref_button_spacing = 10
+
+        gui.history_height = 190
+        gui.history_text_width = 690
+
+        gui.quick_button_text_size = 20
+
+        ## 檔案按鈕配置
+        gui.file_slot_cols = 2
+        gui.file_slot_rows = 2
+
+        ## NVL 模式
+        gui.nvl_height = 170
+
+        gui.nvl_name_width = 305
+        gui.nvl_name_xpos = 325
+
+        gui.nvl_text_width = 915
+        gui.nvl_text_xpos = 345
+        gui.nvl_text_ypos = 5
+
+        gui.nvl_thought_width = 1240
+        gui.nvl_thought_xpos = 20
+
+        gui.nvl_button_width = 1240
+        gui.nvl_button_xpos = 20
