@@ -245,6 +245,7 @@ screen quick_menu():
             textbutton _("儲存") action ShowMenu('save')
             textbutton _("Q.儲存") action QuickSave()
             textbutton _("Q.讀取") action QuickLoad()
+            textbutton _("章節") action ShowMenu('chapter_select')
             textbutton _("設定") action ShowMenu('preferences')
 
 
@@ -290,6 +291,7 @@ screen navigation():
         if main_menu:
 
             textbutton _("開始") action Start()
+            textbutton _("章節跳轉") action ShowMenu("chapter_select")
 
         else:
 
