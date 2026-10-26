@@ -4,8 +4,9 @@
 # 1. 資本家 / 開發總監（冰藍色：冷靜計算、宏觀帳目）
 define c = Character("開發總監", color="#85c1e9", image="c")
 
-# 2. 殘腿老兵 / 退伍海陸（橄欖灰綠：邊緣旁觀、無名榮民）
+# 2. 殘腿老兵 / 退伍海陸（橄欖灰綠：邊緣旁觀、無名榮民；載體狀態：湛藍色）
 define m = Character("退伍士兵", color="#8fa98f", image="m")
+define ma = Character("退伍士兵", color="#5dade2", image="ma")
 
 # 3. 原住民首領之女（翡翠綠：生態共感、血統與神聖信條）
 define p = Character("部族繼承人", color="#7dcea0", image="p")
@@ -23,6 +24,7 @@ define ai = Character("主控系統", color="#7f8c8d", image="ai")
 # ==========================================
 image side c = Transform("images/char_c.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
 image side m = Transform("images/char_m.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side ma = Transform("images/char_ma.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
 image side s = Transform("images/char_s.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
 image side p = Transform("images/char_p.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
 image side n = Transform("images/char_n.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
@@ -31,6 +33,7 @@ image side ai = Transform("images/char_ai.png", zoom=0.18, nearest=True, xpos=10
 
 image char c = Transform("images/char_c.png", zoom=0.48, nearest=True)
 image char m = Transform("images/char_m.png", zoom=0.48, nearest=True)
+image char ma = Transform("images/char_ma.png", zoom=0.48, nearest=True)
 image char s = Transform("images/char_s.png", zoom=0.48, nearest=True)
 image char p = Transform("images/char_p.png", zoom=0.48, nearest=True)
 image char n = Transform("images/char_n.png", zoom=0.48, nearest=True)
@@ -497,7 +500,7 @@ label dev_jump_chap2_link:
     scene bg link_room
     with dissolve
 
-    m "（吸氣——）"
+    ma "（吸氣——）"
 
     "胸口劇烈地起伏，一股前所未有的強烈空氣湧入肺葉。那不是透過塑膠面罩過濾的乾燥化學氣體，而是帶著金屬與泥土溫度的濃烈氣息。"
 
@@ -505,7 +508,7 @@ label dev_jump_chap2_link:
 
     "然後，我感受到了它們。"
 
-    m "（我的腳趾。）"
+    ma "（我的腳趾。）"
 
     "五根修長、長著深色硬質甲床的腳趾，正隨著我的心意，在地面的防滑金屬網格上靈活地收緊、舒展。"
 
@@ -515,7 +518,7 @@ label dev_jump_chap2_link:
 
     s "（焦急的聲音從下方傳來）下士！先別動！神經突觸還需要五分鐘的重構平衡期！躺下！"
 
-    m "（躺下？去他的躺下。）"
+    ma "（躺下？去他的躺下。）"
 
     "我一把扯掉了手臂上貼著的生物感應貼片，雙手撐住艙壁，猛然站了起來！"
 
@@ -534,9 +537,9 @@ label dev_jump_chap2_link:
 
     "狂奔。我張開雙臂，在停機坪寬闊的跑道上竭盡全力地加速狂奔！武裝旋翼機在頭頂呼嘯，地勤人員驚呼閃避，而我只是在狂笑。"
 
-    m "（我能跑了。我他媽能跑了！）"
+    ma "（我能跑了。我他媽能跑了！）"
 
-    m "（那一刻，我根本不在乎自己是不是一個外星怪物，我不在乎這具軀體到底造價多少億。我只知道——我從那具生不如死的輪椅監牢裡逃出來了。）"
+    ma "（那一刻，我根本不在乎自己是不是一個外星怪物，我不在乎這具軀體到底造價多少億。我只知道——我從那具生不如死的輪椅監牢裡逃出來了。）"
 
     ## --------------------------------------------------------------------------
     ## 第四節：上校的私人密會——重訓室與雙腿的暗黑交易

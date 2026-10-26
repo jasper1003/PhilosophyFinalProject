@@ -115,7 +115,7 @@ screen chapter_select():
                         padding (12, 10)
                         action (Start("dev_jump_chap2_biolab") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap2_biolab")])
                         vbox:
-                            text "▶ 2-2. 生化實驗室：水槽中的阿凡達" size 15 color "#ecf0f1" bold True
+                            text "▶ 2-2. 生化實驗室：水槽中的人造載體" size 15 color "#ecf0f1" bold True
                             text "初抵外星基地、羊水培養槽中沉睡的藍色神祇、女科學家冷眼。" size 12 color "#7f8c8d"
 
                     ## 節點 3
