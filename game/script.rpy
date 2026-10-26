@@ -39,11 +39,20 @@ image char ai = Transform("images/char_ai.png", zoom=0.48, nearest=True)
 
 # 氛圍背景設定
 image bg earth_crisis = "images/bg_earth_crisis.png"
-image bg shuttle_cabin = Solid("#10141a")
-image bg shuttle_window = Solid("#0f2a24")
-image bg airlock = Solid("#181f26")
-image bg ground_base = Solid("#1f2730")
-image bg forest_window = Solid("#0d1e18")
+image bg shuttle_cabin = "images/bg_cryo_bay.png"
+image bg shuttle_window = "images/bg_orbit_view.png"
+image bg hangar_tarmac = "images/bg_hangar_tarmac.png"
+image bg ground_base = "images/bg_base_command.png"
+image bg forest_window = "images/bg_window_jungle.png"
+image bg bulldozer_incident = "images/bg_bulldozer_incident.png"
+
+# 後續章節儲備背景
+image bg biolab_tanks = "images/bg_biolab_tanks.png"
+image bg link_room = "images/bg_link_room.png"
+image bg jungle_day = "images/bg_jungle_day.png"
+image bg jungle_night = "images/bg_jungle_night.png"
+image bg hometree_interior = "images/bg_hometree_interior.png"
+image bg floating_mountains = "images/bg_floating_mountains.png"
 
 # 道德動機記錄變數（用於遊戲終局的鏡像對比反詰）
 default c_motive = ""
@@ -122,8 +131,10 @@ label start:
     ## ==========================================
     ## 第二節：地面基地——客觀營運匯報與時限通牒
     ## ==========================================
-    scene bg airlock
+    scene bg hangar_tarmac
     with fade
+
+    "穿梭機穿透大氣層，平穩降落在先遣基地的重裝甲停機坪上。"
 
     "氣閘艙外傳來加壓排氣的嘶鳴，隨著減壓閥復位，室內的換氣循環系統順利完成氣密鎖定。"
 
@@ -231,7 +242,7 @@ label start:
 
     "『他們不會離開這座巨木。我們手裡沒有任何他們需要的東西。沒有。』"
 
-    scene bg forest_window
+    scene bg bulldozer_incident
     with dissolve
 
     "第九十天，【00D:00H:00M】。"
