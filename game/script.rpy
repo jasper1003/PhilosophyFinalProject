@@ -20,25 +20,61 @@ define q = Character("上校", color="#c0392b", image="q")
 define ai = Character("主控系統", color="#7f8c8d", image="ai")
 
 # ==========================================
-# 立繪與頭像設定（像素銳利化、邊界安全距離）
+# 立繪與頭像設定（像素銳利化、表情與服裝差分）
 # ==========================================
+# 側邊頭像 (Side Images)
 image side c = Transform("images/char_c.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side c stern = Transform("images/char_c_stern.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side c tired = Transform("images/char_c_tired.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+
 image side m = Transform("images/char_m.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side m sad = Transform("images/char_m_sad.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side m determined = Transform("images/char_m_determined.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+
 image side ma = Transform("images/char_ma.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side ma hospital = Transform("images/char_ma_hospital.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side ma wild = Transform("images/char_ma_wild.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+
 image side s = Transform("images/char_s.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side s angry = Transform("images/char_s_angry.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side s urgent = Transform("images/char_s_urgent.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+
 image side p = Transform("images/char_p.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
 image side n = Transform("images/char_n.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
-image side q = Transform("images/char_q.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
-image side ai = Transform("images/char_ai.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
 
+image side q = Transform("images/char_q.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side q gym = Transform("images/char_q_gym.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side q angry = Transform("images/char_q_angry.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+
+image side ai = Transform("images/char_ai.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side ai alert = Transform("images/char_ai_alert.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+
+# 場景立繪 (Full Character Sprites)
 image char c = Transform("images/char_c.png", zoom=0.48, nearest=True)
+image char c stern = Transform("images/char_c_stern.png", zoom=0.48, nearest=True)
+image char c tired = Transform("images/char_c_tired.png", zoom=0.48, nearest=True)
+
 image char m = Transform("images/char_m.png", zoom=0.48, nearest=True)
+image char m sad = Transform("images/char_m_sad.png", zoom=0.48, nearest=True)
+image char m determined = Transform("images/char_m_determined.png", zoom=0.48, nearest=True)
+
 image char ma = Transform("images/char_ma.png", zoom=0.48, nearest=True)
+image char ma hospital = Transform("images/char_ma_hospital.png", zoom=0.48, nearest=True)
+image char ma wild = Transform("images/char_ma_wild.png", zoom=0.48, nearest=True)
+
 image char s = Transform("images/char_s.png", zoom=0.48, nearest=True)
+image char s angry = Transform("images/char_s_angry.png", zoom=0.48, nearest=True)
+image char s urgent = Transform("images/char_s_urgent.png", zoom=0.48, nearest=True)
+
 image char p = Transform("images/char_p.png", zoom=0.48, nearest=True)
 image char n = Transform("images/char_n.png", zoom=0.48, nearest=True)
+
 image char q = Transform("images/char_q.png", zoom=0.48, nearest=True)
+image char q gym = Transform("images/char_q_gym.png", zoom=0.48, nearest=True)
+image char q angry = Transform("images/char_q_angry.png", zoom=0.48, nearest=True)
+
 image char ai = Transform("images/char_ai.png", zoom=0.48, nearest=True)
+image char ai alert = Transform("images/char_ai_alert.png", zoom=0.48, nearest=True)
 
 # 氛圍背景設定
 image white = Solid("#ffffff")
@@ -108,7 +144,7 @@ label start:
 
     c "（在地球，這條光帶代表的是地底防護城未被掐斷的氧氣閥門，是兩百億人不必在無聲斷電中迎來寒冬的可能。）"
 
-    c "（出發前，聯合財團的代表將合約推到我面前時，沒有人談論利潤。他們只給了我一張全球電網熄滅的倒數時鐘。）"
+    c tired "（出發前，聯合財團的代表將合約推到我面前時，沒有人談論利潤。他們只給了我一張全球電網熄滅的倒數時鐘。）"
 
     c "（這場航行花費了一千兩百億，耗盡了三個工業大洲整整一年的鋼鐵配額。這已經超越了任何一場豪賭......這是一張無法退票的生存支票。）"
 
@@ -177,7 +213,7 @@ label dev_jump_chap1_dec1:
 
     c "資產負債表上的結果是什麼？他們的搬遷同意率依舊是零。"
 
-    c "這座基地每天的維持成本是一千五百萬。地球電網的失溫名單上，每一秒都有人在死去。股東與公民委員會要的是礦石，不是一篇植物神經學論文。"
+    c stern "這座基地每天的維持成本是一千五百萬。地球電網的失溫名單上，每一秒都有人在死去。股東與公民委員會要的是礦石，不是一篇植物神經學論文。"
 
     s "（深吸一口氣）再給外交途徑一點時間。我們的神經載體培育專案已經成熟，只要透過載體融入他們——"
 
@@ -340,15 +376,15 @@ label dev_jump_chap1_dec2:
             c "（那是實實在在的活生生性命。出於最純粹的憐憫與同理心，我絕不能眼睜睜看著孩子在無預警的火海中喪命。）"
 
     ## 決策生效
-    c "就一個小時。"
+    c stern "就一個小時。"
 
     c "（我抬頭看向桌前的上校，語氣不容質疑）"
 
     c "一個小時內，禁止任何作戰單位越過交戰線。一個小時後，如果巨木仍未清空，作戰編隊按計畫進場推進。"
 
-    q "（雙手抱胸，不屑地聳了聳肩，眼中閃爍著獵食者般的嗜血兇光）"
+    q angry "（雙手抱胸，不屑地聳了聳肩，眼中閃爍著獵食者般的嗜血兇光）"
 
-    q "行啊，總監。就六十分鐘。指針跳到零的那一秒，我的艦隊就會準時進場洗地。到時候那片林子裡只要還有任何在喘氣的東西——就全都是老子的活靶子。"
+    q angry "行啊，總監。就六十分鐘。指針跳到零的那一秒，我的艦隊就會準時進場洗地。到時候那片林子裡只要還有任何在喘氣的東西——就全都是老子的活靶子。"
 
     "全息控制台發出低沉的提示音，一小時的最後撤離倒數計時正式在基地全頻道廣播：【01:00:00】。"
 
@@ -406,9 +442,9 @@ label chapter2_veteran:
 
     m "（在出發前的一個月，他在地鐵口附近的暗巷裡被一個癮君子用一把廉價彈簧刀捅穿了脖子。搶匪搜空了他所有的口袋，搶走的錢甚至不夠買一盒合成香菸。）"
 
-    m "（他的葬禮沒有軍隊儀隊，也沒有榮譽禮炮。在公立市立火化場那個冰冷的傳送帶上，他的遺體被塞在一個粗製濫造的瓦楞紙箱裡。）"
+    m sad "（他的葬禮沒有軍隊儀隊，也沒有榮譽禮炮。在公立市立火化場那個冰冷的傳送帶上，他的遺體被塞在一個粗製濫造的瓦楞紙箱裡。）"
 
-    m "（紙箱滑進爐膛的那一秒，熱浪捲起焦黑的碎屑。我注視著那團火光，突然覺得人類所有的智慧與野心，在貧窮面前荒謬得像個笑話。）"
+    m sad "（紙箱滑進爐膛的那一秒，熱浪捲起焦黑的碎屑。我注視著那團火光，突然覺得人類所有的智慧與野心，在貧窮面前荒謬得像個笑話。）"
 
     m "（兩天後，兩個穿著昂貴防塵風衣的財團代表，跨過我房門前發臭的污水水窪，敲開了我的門。）"
 
@@ -455,7 +491,7 @@ label dev_jump_chap2_biolab:
 
     s "（抱著數位光譜儀大步走來，臉色冰冷，眼神中寫滿了未加掩飾的慍怒）"
 
-    s "看夠了嗎，下士？"
+    s angry "看夠了嗎，下士？"
 
     m "（我收回視線，轉向眼前這位滿頭灰髮、嘴角緊繃的首席女科學家。）"
 
@@ -500,7 +536,7 @@ label dev_jump_chap2_link:
     scene bg link_room
     with dissolve
 
-    ma "（吸氣——）"
+    ma hospital "（吸氣——）"
 
     "胸口劇烈地起伏，一股前所未有的強烈空氣湧入肺葉。那不是透過塑膠面罩過濾的乾燥化學氣體，而是帶著金屬與泥土溫度的濃烈氣息。"
 
@@ -508,7 +544,7 @@ label dev_jump_chap2_link:
 
     "然後，我感受到了它們。"
 
-    ma "（我的腳趾。）"
+    ma hospital "（我的腳趾。）"
 
     "五根修長、長著深色硬質甲床的腳趾，正隨著我的心意，在地面的防滑金屬網格上靈活地收緊、舒展。"
 
@@ -516,9 +552,9 @@ label dev_jump_chap2_link:
 
     "力量從足弓湧上小腿，再傳導到充盈著爆發力的膝關節。"
 
-    s "（焦急的聲音從下方傳來）下士！先別動！神經突觸還需要五分鐘的重構平衡期！躺下！"
+    s urgent "（焦急的聲音從下方傳來）下士！先別動！神經突觸還需要五分鐘的重構平衡期！躺下！"
 
-    ma "（躺下？去他的躺下。）"
+    ma hospital "（躺下？去他的躺下。）"
 
     "我一把扯掉了手臂上貼著的生物感應貼片，雙手撐住艙壁，猛然站了起來！"
 
@@ -537,9 +573,9 @@ label dev_jump_chap2_link:
 
     "狂奔。我張開雙臂，在停機坪寬闊的跑道上竭盡全力地加速狂奔！武裝旋翼機在頭頂呼嘯，地勤人員驚呼閃避，而我只是在狂笑。"
 
-    ma "（我能跑了。我他媽能跑了！）"
+    ma wild "（我能跑了。我他媽能跑了！）"
 
-    ma "（那一刻，我根本不在乎自己是不是一個外星怪物，我不在乎這具軀體到底造價多少億。我只知道——我從那具生不如死的輪椅監牢裡逃出來了。）"
+    ma wild "（那一刻，我根本不在乎自己是不是一個外星怪物，我不在乎這具軀體到底造價多少億。我只知道——我從那具生不如死的輪椅監牢裡逃出來了。）"
 
     ## --------------------------------------------------------------------------
     ## 第四節：上校的私人密會——重訓室與雙腿的暗黑交易
@@ -565,14 +601,14 @@ label dev_jump_chap2_colonel:
 
     "他的臉，盤踞著三道深深的爪痕疤痕，那是未經稀釋的叢林殘酷留給他的勳章。"
 
-    show char q at right
+    show char q gym at right
     with dissolve
 
-    q "（放下槓鈴，拿起毛巾擦了一把脖子上的汗水，轉過身盯著我）"
+    q gym "（放下槓鈴，拿起毛巾擦了一把脖子上的汗水，轉過身盯著我）"
 
-    q "你剛才在跑道上的動靜鬧得挺大啊，陸戰隊員。"
+    q gym "你剛才在跑道上的動靜鬧得挺大啊，陸戰隊員。"
 
-    q "（咧開嘴，露出一口白牙，露出像鯊魚般的獰笑）"
+    q gym "（咧開嘴，露出一口白牙，露出像鯊魚般的獰笑）"
 
     q "（他大步走到我的輪椅前，沉重的作戰軍靴在地板上踏出沉悶的聲響，雙手撐在我的輪椅扶手上，居高臨下地俯視著我）"
 
@@ -586,21 +622,21 @@ label dev_jump_chap2_colonel:
 
     m "您需要我做什麼，長官？"
 
-    q "（拍了拍我的輪椅靠背，聲音壓得很低，卻帶著令人無法抗拒的誘惑與壓迫感）"
+    q gym "（拍了拍我的輪椅靠背，聲音壓得很低，卻帶著令人無法抗拒的誘惑與壓迫感）"
 
-    q "很簡單。融入他們。讓那些藍皮猴子相信你也是他們的一員。"
+    q gym "很簡單。融入他們。讓那些藍皮猴子相信你也是他們的一員。"
 
     q "摸清楚他們家園巨木內部的結構盲區。摸清楚他們聚落周圍的防線布設、撤退路線、還有他們可能藏匿武器的地點。"
 
     q "把那些象牙塔學者瞞著我的情報，每天晚上神經斷開之後，原原本本地送到我的終端機上。"
 
-    q "（上校直起身子，雙手叉腰，語氣如同在簽署一份不可違抗的神聖契約）"
+    q gym "（上校直起身子，雙手叉腰，語氣如同在簽署一份不可違抗的神聖契約）"
 
-    q "你替我把這件事辦成，等這趟該死的開採任務結束、返航船票到手的那一天——"
+    q gym "你替我把這件事辦成，等這趟該死的開採任務結束、返航船票到手的那一天——"
 
     q "我親自去找財團總監簽字。我會讓總部最好的醫療團隊，把你的脊椎從第一節到第七節全部用最新的奈米生物材料重塑一遍。"
 
-    q "我向你擔保，陸戰隊員：你會用你自己真實的雙腿，踏上地球的土地。站著走出去。"
+    q gym "我向你擔保，陸戰隊員：你會用你自己真實的雙腿，踏上地球的土地。站著走出去。"
 
     m "（用我自己的腿走出去……）"
 
@@ -639,11 +675,11 @@ label dev_jump_chap2_colonel:
     ## 決策生效
     m "（我緩緩抬起右手，向上校敬了一個標準的軍禮）"
 
-    m "收到，長官。我會把您需要的所有情報帶回來。"
+    m determined "收到，長官。我會把您需要的所有情報帶回來。"
 
-    q "（嘴角揚起滿意的狂傲弧度，伸手重重拍了拍我的肩膀）"
+    q gym "（嘴角揚起滿意的狂傲弧度，伸手重重拍了拍我的肩膀）"
 
-    q "這才像個海軍陸戰隊。明天清晨六點，第一架武裝巡邏直升機會把你和那個女博士的團隊送進叢林深處。"
+    q gym "這才像個海軍陸戰隊。明天清晨六點，第一架武裝巡邏直升機會把你和那個女博士的團隊送進叢林深處。"
 
     q "記住你答應我的事，下士。別在那些樹葉和發光的蟲子裡迷失了你自己。"
 
