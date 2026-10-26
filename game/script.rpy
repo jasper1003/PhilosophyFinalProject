@@ -16,7 +16,7 @@ define n = Character("部族獵手", color="#edbb99", image="n")
 # 配角與系統
 define s = Character("首席科學家", color="#85929e", image="s")
 define q = Character("上校", color="#c0392b", image="q")
-define ai = Character("主控系統", color="#7f8c8d")
+define ai = Character("主控系統", color="#7f8c8d", image="ai")
 
 # ==========================================
 # 立繪與頭像設定（像素銳利化、邊界安全距離）
@@ -27,6 +27,7 @@ image side s = Transform("images/char_s.png", zoom=0.18, nearest=True, xpos=10, 
 image side p = Transform("images/char_p.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
 image side n = Transform("images/char_n.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
 image side q = Transform("images/char_q.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side ai = Transform("images/char_ai.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
 
 image char c = Transform("images/char_c.png", zoom=0.48, nearest=True)
 image char m = Transform("images/char_m.png", zoom=0.48, nearest=True)
@@ -34,6 +35,7 @@ image char s = Transform("images/char_s.png", zoom=0.48, nearest=True)
 image char p = Transform("images/char_p.png", zoom=0.48, nearest=True)
 image char n = Transform("images/char_n.png", zoom=0.48, nearest=True)
 image char q = Transform("images/char_q.png", zoom=0.48, nearest=True)
+image char ai = Transform("images/char_ai.png", zoom=0.48, nearest=True)
 
 # 氛圍背景佔位
 image bg shuttle_cabin = Solid("#10141a")
