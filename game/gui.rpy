@@ -24,16 +24,16 @@ define config.check_conflicting_properties = True
 ## 介面中文字的顏色
 
 ## 整個介面中使用的強調色，用於標記和突出顯示文字
-define gui.accent_color = '#0099cc'
+define gui.accent_color = '#38bdf8'
 
 ## 當文字按鈕既未被選取也未被懸停時所使用的顏色
-define gui.idle_color = '#888888'
+define gui.idle_color = '#9ab4c8'
 
 ## 小顏色適用於小文字，需要更亮/更暗才能達到與普通文字相同的效果
-define gui.idle_small_color = '#aaaaaa'
+define gui.idle_small_color = '#b0c5d6'
 
 ## 用於懸停的按鈕和欄的顏色
-define gui.hover_color = '#66c1e0'
+define gui.hover_color = '#48dbfb'
 
 ## 當文字按鈕被選取但未獲得焦點時所使用的顏色。如果按鈕是目前畫面或首選項值，則
 ## 按鈕將被選取
@@ -232,7 +232,7 @@ define gui.file_slot_rows = 2
 ## 這些變數控制各種使用者介面元素的位置和間距
 
 ## 導覽按鈕左側一般相對於螢幕左側的位置
-define gui.navigation_xpos = 40
+define gui.navigation_xpos = 50
 
 ## 跳過指示器的垂直位置
 define gui.skip_ypos = 10
@@ -244,7 +244,7 @@ define gui.notify_ypos = 45
 define gui.choice_spacing = 22
 
 ## 主選單和遊戲選單導覽部分中的按鈕
-define gui.navigation_spacing = 8
+define gui.navigation_spacing = 10
 
 ## 控制首選項之間的間距
 define gui.pref_spacing = 10

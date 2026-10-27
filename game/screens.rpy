@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## 初始化
 ################################################################################
 
@@ -330,9 +330,15 @@ style navigation_button_text is gui_button_text
 style navigation_button:
     size_group "navigation"
     properties gui.button_properties("navigation_button")
+    hover_xoffset 6
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
+    idle_color "#9ab6ce"
+    hover_color "#48dbfb"
+    selected_color "#ffffff"
+    insensitive_color "#506375"
+    hover_outlines [(2, "#00c3ff44", 0, 0)]
 
 
 ## 主選單畫面 #######################################################################
@@ -348,9 +354,22 @@ screen main_menu():
 
     add gui.main_menu_background
 
-    ## 這個空框使主選單變暗。
+    ## 左側半透明深色科技導覽背景底板
     frame:
         style "main_menu_frame"
+
+    ## 科技邊線裝飾
+    add Solid("#00c8e622") xpos 290 ypos 0 xsize 1 ysize 720
+    add Solid("#00d2ff88") xpos 289 ypos 180 xsize 3 ysize 320
+
+    ## 左側頂部極簡科技標籤
+    vbox:
+        xpos gui.navigation_xpos
+        ypos 55
+        spacing 4
+        text "NEUROLINK // SYSTEM" size 13 color "#00d2ffaa" bold True kerning 2
+        text "EXPEDITION INTERFACE" size 11 color "#66829a" kerning 1
+        add Solid("#00d2ff33") ysize 1 xsize 160
 
     ## use 語句在該畫面中包含另一個畫面。主選單的實際內容在導覽畫面中。
     use navigation
@@ -358,13 +377,62 @@ screen main_menu():
     if gui.show_name:
 
         vbox:
-            style "main_menu_vbox"
+            xpos 380
+            yalign 0.44
+            spacing 14
 
-            text "[config.name!t]":
-                style "main_menu_title"
+            # 頂部裝飾主題標籤
+            hbox:
+                spacing 10
+                yalign 0.5
+                add Solid("#00e5ff") ysize 14 xsize 3 yalign 0.5
+                text "PHILOSOPHY INTERACTIVE DRAMA // PANDORA ARCHIVE":
+                    size 13
+                    color "#00d2ffcc"
+                    bold True
+                    kerning 2
 
-            text "[config.version]":
-                style "main_menu_version"
+            # 主標題 Pandora
+            text "P A N D O R A":
+                size 74
+                color "#ffffff"
+                outlines [(4, "#0088cc55", 0, 0), (2, "#00e1ff88", 0, 0), (1, "#030a14", 2, 2)]
+                bold True
+                kerning 8
+
+            # 副標題
+            text "—— 潘朵拉：鏡像倫理 ——":
+                size 24
+                color "#d2eafc"
+                outlines [(2, "#04101e", 1, 1)]
+                kerning 4
+
+            null height 4
+
+            # 哲學主軸文案
+            text "生態存續・文明擴張・道德動機之思辨歷程":
+                size 17
+                color "#8cb0cf"
+                kerning 2
+
+            null height 14
+
+            # 系統版本與運行狀態標籤
+            hbox:
+                spacing 12
+                frame:
+                    background "#00d2ff1a"
+                    padding (12, 5, 12, 5)
+                    text "VERSION [config.version]":
+                        size 12
+                        color "#64d2ff"
+                        bold True
+                frame:
+                    background "#ffffff0f"
+                    padding (12, 5, 12, 5)
+                    text "STATUS: LINK ACTIVE":
+                        size 12
+                        color "#9cb8cf"
 
 
 style main_menu_frame is empty
@@ -374,10 +442,9 @@ style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
 style main_menu_frame:
-    xsize 280
+    xsize 290
     yfill True
-
-    background "gui/overlay/main_menu.png"
+    background "#060e19d8"
 
 style main_menu_vbox:
     xalign 1.0
@@ -495,7 +562,7 @@ style game_menu_outer_frame:
     background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
-    xsize 280
+    xsize 290
     yfill True
 
 style game_menu_content_frame:
@@ -517,8 +584,9 @@ style game_menu_label:
     ysize 120
 
 style game_menu_label_text:
-    size 50
-    color gui.accent_color
+    size 48
+    color "#64d2ff"
+    outlines [(2, "#0088cc40", 0, 0)]
     yalign 0.5
 
 style return_button:
