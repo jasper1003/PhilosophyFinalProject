@@ -1,0 +1,164 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 449, in script
+    "而在那顆連接人類神經與異星血肉的生化連結艙內，屬於那個殘疾退伍士兵的雙眼，正準備迎來他在這片森林中最漫長、也最痛苦的救贖與撕裂……"
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/jasper_1003_/Renpy/Avatar/game/saves/persistent.1793090507.tmp'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 449, in script
+    "而在那顆連接人類神經與異星血肉的生化連結艙內，屬於那個殘疾退伍士兵的雙眼，正準備迎來他在這片森林中最漫長、也最痛苦的救贖與撕裂……"
+  File "game/script.rpy", line 449, in script
+    "而在那顆連接人類神經與異星血肉的生化連結艙內，屬於那個殘疾退伍士兵的雙眼，正準備迎來他在這片森林中最漫長、也最痛苦的救贖與撕裂……"
+renpy.game.QuitException
+
+During handling of the above exception, another exception occurred:
+
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/jasper_1003_/Renpy/Avatar/game/saves/persistent.1793090507.tmp'
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 449, in script
+    "而在那顆連接人類神經與異星血肉的生化連結艙內，屬於那個殘疾退伍士兵的雙眼，正準備迎來他在這片森林中最漫長、也最痛苦的救贖與撕裂……"
+  File "renpy/ast.py", line 2935, in execute
+    Say.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "renpy/ast.py", line 994, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/sayexports.py", line 129, in say
+    who(what, *args, **kwargs)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1565, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1220, in do_display
+    display_say(who, what, self.do_show, **display_args)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 902, in display_say
+    rv = renpy.ui.interact(mouse="say", type=type, roll_forward=roll_forward)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 306, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2163, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "renpy/display/core.py", line 3011, in interact_core
+    self.idle_frame(expensive)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "renpy/display/core.py", line 2321, in idle_frame
+    renpy.persistent.check_update()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/persistent.py", line 425, in check_update
+    update()
+    ~~~~~~^^
+  File "renpy/persistent.py", line 461, in update
+    save()
+    ~~~~^^
+  File "renpy/persistent.py", line 484, in save
+    renpy.loadsave.location.save_persistent(compressed)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "renpy/savelocation.py", line 619, in save_persistent
+    l.save_persistent(data)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/savelocation.py", line 427, in save_persistent
+    with open(fn_tmp, "wb") as f:
+         ~~~~^^^^^^^^^^^^^^      
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/jasper_1003_/Renpy/Avatar/game/saves/persistent.1793090507.tmp'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "renpy/main.py", line 596, in main
+    run(restart)
+    ~~~^^^^^^^^^
+  File "renpy/main.py", line 137, in run
+    renpy.execution.run_context(True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/execution.py", line 1050, in run_context
+    context.run()
+    ~~~~~~~~~~~^^
+  File "game/script.rpy", line 449, in script
+    "而在那顆連接人類神經與異星血肉的生化連結艙內，屬於那個殘疾退伍士兵的雙眼，正準備迎來他在這片森林中最漫長、也最痛苦的救贖與撕裂……"
+  File "game/script.rpy", line 449, in script
+    "而在那顆連接人類神經與異星血肉的生化連結艙內，屬於那個殘疾退伍士兵的雙眼，正準備迎來他在這片森林中最漫長、也最痛苦的救贖與撕裂……"
+  File "renpy/display/error.py", line 135, in report_exception
+    renpy.game.invoke_in_new_context(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        call_exception_screen,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        ignore_action=ignore_action,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "renpy/game.py", line 285, in invoke_in_new_context
+    return callable(*args, **kwargs)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "renpy/display/error.py", line 44, in call_exception_screen
+    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 306, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2163, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "renpy/display/core.py", line 3096, in interact_core
+    self.quit_event()
+    ~~~~~~~~~~~~~~~^^
+  File "renpy/display/core.py", line 1716, in quit_event
+    renpy.display.behavior.run(renpy.config.quit_action)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/behavior.py", line 411, in run
+    return action(*args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^
+  File "renpy/exports/restartexports.py", line 135, in quit
+    raise renpy.game.QuitException(relaunch=relaunch, status=status)
+renpy.game.QuitException
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "renpy/bootstrap.py", line 401, in bootstrap
+    renpy.main.main()
+    ~~~~~~~~~~~~~~~^^
+  File "renpy/main.py", line 608, in main
+    renpy.persistent.update(True)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/persistent.py", line 461, in update
+    save()
+    ~~~~^^
+  File "renpy/persistent.py", line 484, in save
+    renpy.loadsave.location.save_persistent(compressed)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "renpy/savelocation.py", line 619, in save_persistent
+    l.save_persistent(data)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/savelocation.py", line 427, in save_persistent
+    with open(fn_tmp, "wb") as f:
+         ~~~~^^^^^^^^^^^^^^      
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/jasper_1003_/Renpy/Avatar/game/saves/persistent.1793090507.tmp'
+
+macOS-27.0.1-arm64-arm-64bit arm64
+Ren'Py 8.5.3.26051504
+Avatar 1.0
+Tue Oct 27 16:46:51 2026
