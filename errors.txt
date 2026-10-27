@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/screens.rpy", line 362: 'yfill' is not a keyword argument or valid child of the add statement.
+    add Solid("#00c8e622") xpos 290 ypos 0 xsize 1 yfill True
+                                                        ^
+
+Ren'Py Version: Ren'Py 8.5.3.26051504
+Wed Oct 28 01:24:03 2026
