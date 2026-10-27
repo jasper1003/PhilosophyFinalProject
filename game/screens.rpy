@@ -362,77 +362,29 @@ screen main_menu():
     add Solid("#00c8e622") xpos 290 ypos 0 xsize 1 ysize 720
     add Solid("#00d2ff88") xpos 289 ypos 180 xsize 3 ysize 320
 
-    ## 左側頂部極簡科技標籤
-    vbox:
-        xpos gui.navigation_xpos
-        ypos 55
-        spacing 4
-        text "NEUROLINK // SYSTEM" size 13 color "#00d2ffaa" bold True kerning 2
-        text "EXPEDITION INTERFACE" size 11 color "#66829a" kerning 1
-        add Solid("#00d2ff33") ysize 1 xsize 160
-
     ## use 語句在該畫面中包含另一個畫面。主選單的實際內容在導覽畫面中。
     use navigation
 
     if gui.show_name:
 
         vbox:
-            xpos 380
+            xalign 0.62
             yalign 0.44
-            spacing 14
-
-            # 頂部裝飾主題標籤
-            hbox:
-                spacing 10
-                yalign 0.5
-                add Solid("#00e5ff") ysize 14 xsize 3 yalign 0.5
-                text "PHILOSOPHY INTERACTIVE DRAMA // PANDORA ARCHIVE":
-                    size 13
-                    color "#00d2ffcc"
-                    bold True
-                    kerning 2
 
             # 主標題 Pandora
             text "P A N D O R A":
-                size 74
+                size 86
                 color "#ffffff"
                 outlines [(4, "#0088cc55", 0, 0), (2, "#00e1ff88", 0, 0), (1, "#030a14", 2, 2)]
                 bold True
-                kerning 8
+                kerning 10
 
-            # 副標題
-            text "—— 潘朵拉：鏡像倫理 ——":
-                size 24
-                color "#d2eafc"
-                outlines [(2, "#04101e", 1, 1)]
-                kerning 4
-
-            null height 4
-
-            # 哲學主軸文案
-            text "生態存續・文明擴張・道德動機之思辨歷程":
-                size 17
-                color "#8cb0cf"
-                kerning 2
-
-            null height 14
-
-            # 系統版本與運行狀態標籤
-            hbox:
-                spacing 12
-                frame:
-                    background "#00d2ff1a"
-                    padding (12, 5, 12, 5)
-                    text "VERSION [config.version]":
-                        size 12
-                        color "#64d2ff"
-                        bold True
-                frame:
-                    background "#ffffff0f"
-                    padding (12, 5, 12, 5)
-                    text "STATUS: LINK ACTIVE":
-                        size 12
-                        color "#9cb8cf"
+        # 右下角純淨版本號
+        text "v[config.version]":
+            xalign 0.98
+            yalign 0.98
+            size 14
+            color "#ffffff55"
 
 
 style main_menu_frame is empty
