@@ -16,6 +16,7 @@ define n = Character("部族獵手", color="#edbb99", image="n")
 
 # 配角與系統
 define s = Character("首席科學家", color="#85929e", image="s")
+define sa = Character("首席科學家", color="#85929e", image="sa")
 define q = Character("上校", color="#c0392b", image="q")
 define ai = Character("主控系統", color="#7f8c8d", image="ai")
 
@@ -38,6 +39,9 @@ image side ma wild = Transform("images/char_ma_wild.png", zoom=0.18, nearest=Tru
 image side s = Transform("images/char_s.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
 image side s angry = Transform("images/char_s_angry.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
 image side s urgent = Transform("images/char_s_urgent.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+
+image side sa = Transform("images/char_sa.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
+image side sa urgent = Transform("images/char_sa.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
 
 image side p = Transform("images/char_p.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
 image side n = Transform("images/char_n.png", zoom=0.18, nearest=True, xpos=10, yalign=1.0)
@@ -65,6 +69,9 @@ image char ma wild = Transform("images/char_ma_wild.png", zoom=0.48, nearest=Tru
 image char s = Transform("images/char_s.png", zoom=0.48, nearest=True)
 image char s angry = Transform("images/char_s_angry.png", zoom=0.48, nearest=True)
 image char s urgent = Transform("images/char_s_urgent.png", zoom=0.48, nearest=True)
+
+image char sa = Transform("images/char_sa.png", zoom=0.48, nearest=True)
+image char sa urgent = Transform("images/char_sa.png", zoom=0.48, nearest=True)
 
 image char p = Transform("images/char_p.png", zoom=0.48, nearest=True)
 image char n = Transform("images/char_n.png", zoom=0.48, nearest=True)
@@ -715,14 +722,14 @@ label dev_jump_chap2_jungle:
     "遮天蔽日的蕨類植物比裝甲車還要高大，盤根錯節的巨木氣根如同史前巨蟒般在大地上蜿蜒交織。陽光穿過數百公尺高的林冠層，灑下斑駁而潮濕的翠綠光柱。"
 
     show char ma at left
-    show char s at right
+    show char sa at right
     with dissolve
 
-    s "（蹲在一株巨大的發光氣根旁，將探針插入樹皮，緊盯著手持終端上的波形圖）"
+    sa "（蹲在一株巨大的發光氣根旁，將探針插入樹皮，緊盯著手持終端上的波形圖）"
 
-    s "看這個信號傳導速率……每一株古樹的根系都透過地底真菌網絡緊密相連。每一棵樹都在向周圍的數萬棵樹傳遞電化學脈衝，這整片森林就是一個活生生的巨大大腦。"
+    sa "看這個信號傳導速率……每一株古樹的根系都透過地底真菌網絡緊密相連。每一棵樹都在向周圍的數萬棵樹傳遞電化學脈衝，這整片森林就是一個活生生的巨大大腦。"
 
-    s "別光顧著拿槍到處亂晃，下士！把你的光譜掃描儀打開，幫我記錄東側根系的突觸電位！"
+    sa "別光顧著拿槍到處亂晃，下士！把你的光譜掃描儀打開，幫我記錄東側根系的突觸電位！"
 
     ma "（我單手端著沉重的制式突擊步槍，另一隻手卻在戰術腕錶上悄悄記錄著林冠遮蔽率與地質座標。）"
 
@@ -734,9 +741,9 @@ label dev_jump_chap2_jungle:
 
     "原本在林間鳴叫的飛鳥瞬間噤聲。"
 
-    s urgent "（臉色驟變，猛然站起身）不對勁……生物震波讀數破表了！所有人立刻退回樹洞掩體！快！"
+    sa urgent "（臉色驟變，猛然站起身）不對勁……生物震波讀數破表了！所有人立刻退回樹洞掩體！快！"
 
-    hide char s
+    hide char sa
     with dissolve
 
     "話音未落，十公尺外的巨型蕨類叢轟然炸裂！"
