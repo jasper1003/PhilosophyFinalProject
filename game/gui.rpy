@@ -64,22 +64,22 @@ define gui.name_text_font = "font.ttc"
 define gui.interface_text_font = "font.ttc"
 
 ## 正常對話文字的大小
-define gui.text_size = 22
+define gui.text_size = 26
 
 ## 角色名稱的大小
-define gui.name_text_size = 30
+define gui.name_text_size = 34
 
 ## 遊戲使用者介面中的文字的大小
-define gui.interface_text_size = 22
+define gui.interface_text_size = 28
 
 ## 遊戲使用者介面中標籤的大小
-define gui.label_text_size = 24
+define gui.label_text_size = 30
 
 ## 通知螢幕上的文字大小
-define gui.notify_text_size = 16
+define gui.notify_text_size = 20
 
 ## 遊戲標題的大小
-define gui.title_text_size = 50
+define gui.title_text_size = 64
 
 
 ## 主選單和遊戲選單 ####################################################################
@@ -177,24 +177,24 @@ define gui.confirm_button_text_xalign = 0.5
 define gui.page_button_borders = Borders(10, 4, 10, 4)
 
 define gui.quick_button_borders = Borders(10, 4, 10, 0)
-define gui.quick_button_text_size = 14
+define gui.quick_button_text_size = 16
 define gui.quick_button_text_idle_color = gui.idle_small_color
 define gui.quick_button_text_selected_color = gui.accent_color
 
 ## 您也可以透過新增正確命名的變數來新增自己的自訂設定。例如，您可以取消註解以下
 ## 行以設定導覽按鈕的寬度
 
-# define gui.navigation_button_width = 250
+define gui.navigation_button_text_size = 28
 
 
 ## 選項按鈕 ########################################################################
 ##
 ## 選擇按鈕用於遊戲內選單
 
-define gui.choice_button_width = 790
+define gui.choice_button_width = 860
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(100, 5, 100, 5)
+define gui.choice_button_borders = Borders(60, 8, 60, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
@@ -212,7 +212,7 @@ define gui.choice_button_text_insensitive_color = '#8888887f'
 define gui.slot_button_width = 276
 define gui.slot_button_height = 206
 define gui.slot_button_borders = Borders(10, 10, 10, 10)
-define gui.slot_button_text_size = 14
+define gui.slot_button_text_size = 16
 define gui.slot_button_text_xalign = 0.5
 define gui.slot_button_text_idle_color = gui.idle_small_color
 define gui.slot_button_text_selected_idle_color = gui.selected_color
@@ -244,7 +244,7 @@ define gui.notify_ypos = 45
 define gui.choice_spacing = 22
 
 ## 主選單和遊戲選單導覽部分中的按鈕
-define gui.navigation_spacing = 4
+define gui.navigation_spacing = 8
 
 ## 控制首選項之間的間距
 define gui.pref_spacing = 10
@@ -321,7 +321,7 @@ define gui.unscrollable = "hide"
 define config.history_length = 250
 
 ## 歷史畫面條目的高度，或設為 None 以犧牲效能為代價使高度可變
-define gui.history_height = 140
+define gui.history_height = 160
 
 ## 在歷史畫面條目之間新增的額外空間。
 define gui.history_spacing = 0
