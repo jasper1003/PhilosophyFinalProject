@@ -203,8 +203,8 @@ screen chapter_select():
                                 padding (12, 8)
                                 action (Start("dev_jump_chap2_final_decision") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap2_final_decision")])
                                 vbox:
-                                    text "▶ 2-8. 最後一小時：叛變或順從的終極抉擇" size 14 color "#ecf0f1" bold True
-                                    text "上校最後威逼利誘、重返巨木撤離警告、第二倫理動機與是否叛變抉擇。" size 11 color "#7f8c8d"
+                                    text "▶ 2-8. 最後一小時：決意叛變與第二道德決策" size 14 color "#ecf0f1" bold True
+                                    text "上校最後威逼利誘、重返巨木撤離警告、決意叛變的底層倫理動機。" size 11 color "#7f8c8d"
 
                             ## 節點 9
                             button:
@@ -215,7 +215,7 @@ screen chapter_select():
                                 action (Start("dev_jump_chap2_summary") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap2_summary")])
                                 vbox:
                                     text "▶ 2-9. 老兵篇結算：道德動機歷史紀錄" size 14 color "#f9e79f" bold True
-                                    text "檢視退伍士兵兩個道德問題與終極行動的選擇總結面板。" size 11 color "#7f8c8d"
+                                    text "檢視退伍士兵兩個道德問題的選擇與底層動機總結面板。" size 11 color "#7f8c8d"
 
 
 ## ==============================================================================
