@@ -103,18 +103,23 @@ image bg jungle_night = "images/bg_jungle_night.png"
 image bg hometree_interior = "images/bg_hometree_interior.png"
 image bg floating_mountains = "images/bg_floating_mountains.png"
 
-# 道德動機記錄變數（用於遊戲終局的鏡像對比反詰）
-default c_motive = ""
+# 道德動機記錄變數（用於各角色章節總結與遊戲終局的鏡像對比反詰）
+default c_motive = "（尚未進行此抉擇）"
 default c_motive_type = ""
-default c_motive2 = ""
+default c_choice1_quote = ""
+default c_motive2 = "（尚未進行此抉擇）"
 default c_motive2_type = ""
+default c_choice2_quote = ""
 
 # 第二章：退伍老兵動機記錄變數
-default m_motive1 = ""
+default m_motive1 = "（尚未進行此抉擇）"
 default m_motive1_type = ""
-default m_motive2 = ""
+default m_choice1_quote = ""
+default m_motive2 = "（尚未進行此抉擇）"
 default m_motive2_type = ""
+default m_choice2_quote = ""
 default m_rebel_choice = ""
+default m_rebel_desc = "（尚未進行此抉擇）"
 
 label start:
 
@@ -261,21 +266,25 @@ label dev_jump_chap1_dec1:
         "「算盤很簡單：和平最划算；但百億人的生計絕不能被少數人拖垮。」":
             $ c_motive_type = "utilitarianism"
             $ c_motive = "依據最大多數人的生存利益量化計算"
+            $ c_choice1_quote = "「算盤很簡單：和平最划算；但百億人的生計絕不能被少數人拖垮。」"
             c "（沒錯，一切以大局利益為重。兩百億人的生存遠重於眼前的少數，能省下戰爭成本最好，但底線絕不退讓。）"
 
         "「一切按規矩來。開採是我的受託職責，給三個月也是法定程序。」":
             $ c_motive_type = "deontology"
             $ c_motive = "恪守受託合約職責與法定程序守則"
+            $ c_choice1_quote = "「一切按規矩來。開採是我的受託職責，給三個月也是法定程序。」"
             c "（這無關個人喜好，純粹是履行職責。簽了合約就是律令，該給的程序一天不能少，該交的差一天也不能拖。）"
 
         "「掌舵者要有談判的度量，也要有動手的魄力；我絕不軟弱逃避。」":
             $ c_motive_type = "virtue_ethics"
             $ c_motive = "展現兼具耐心與決斷之領導者品格"
+            $ c_choice1_quote = "「掌舵者要有談判的度量，也要有動手的魄力；我絕不軟弱逃避。」"
             c "（這是我對自己品格的要求。一個合格的領導者必須兼具耐心與剛毅，絕不在關鍵時刻猶豫退縮。）"
 
         "「凡事應先抱持善意與寬容。只要有一絲生機，就該力求和平。」":
             $ c_motive_type = "christian_agape"
             $ c_motive = "出於對受造生命之仁愛與寬容善行"
+            $ c_choice1_quote = "「凡事應先抱持善意與寬容。只要有一絲生機，就該力求和平。」"
             c "（生命是寶貴的。出於仁慈與憐憫，哪怕只有一線生機，我也必須把這扇和平的大門敞開到最後一刻。）"
 
     "電子印鑑在終端上鎖定，【九十天倒數計時器】在基地的全息排程表頂端正式啟動：【90D:00H:00M】。"
@@ -369,21 +378,25 @@ label dev_jump_chap1_dec2:
         "「死傷越少麻煩越少。給一小時逃命，才能用最低代價換取開採。」":
             $ c_motive2_type = "utilitarianism"
             $ c_motive2 = "以降低傷亡避免長期報復代價，確保開採長遠效益"
+            $ c_choice2_quote = "「死傷越少麻煩越少。給一小時逃命，才能用最低代價換取開採。」"
             c "（這是現實的利害算盤。死傷只會帶來無止境的仇恨與襲擊，多給一小時避難，能為基地省下天文數字的安保代價。）"
 
         "「我們不是土匪。交戰守則明訂：動武前必須給予平民撤離警告。」":
             $ c_motive2_type = "deontology"
             $ c_motive2 = "遵守非戰鬥人員保護原則之文明交戰義務"
+            $ c_choice2_quote = "「我們不是土匪。交戰守則明訂：動武前必須給予平民撤離警告。」"
             c "（規矩就是規矩。無論對手是誰，對無防禦平民進行預先警告是不可逾越的交戰底線，絕不能淪為野蠻行徑。）"
 
         "「我需要礦石，但我絕不淪為屠夫；身處地獄也要守住做人底線。」":
             $ c_motive2_type = "virtue_ethics"
             $ c_motive2 = "在殘酷現實中維護個人良知與道德尊嚴"
+            $ c_choice2_quote = "「我需要礦石，但我絕不淪為屠夫；身處地獄也要守住做人底線。」"
             c "（這是我的為人之道。體制可以逼我做殘酷的決策，但我絕不能放任自己墮落為純粹嗜血的殺戮工具。）"
 
         "「看在無辜老弱的份上。只要心懷一絲憐憫，就不能趕盡殺絕。」":
             $ c_motive2_type = "christian_agape"
             $ c_motive2 = "出於對無辜弱小者之憐憫與鄰人關愛"
+            $ c_choice2_quote = "「看在無辜老弱的份上。只要心懷一絲憐憫，就不能趕盡殺絕。」"
             c "（那是實實在在的活生生性命。出於最純粹的憐憫與同理心，我絕不能眼睜睜看著孩子在無預警的火海中喪命。）"
 
     ## 決策生效
@@ -416,6 +429,24 @@ label dev_jump_chap1_dec2:
     with fade
 
     "至此，開發總監在此次開採任務中的所有宏觀授權與決策皆已落定。"
+
+label dev_jump_chap1_summary:
+    scene black
+    with dissolve
+
+    call screen moral_summary_card(
+        chapter_title="第一章：企業開發總監篇",
+        char_name="企業開發總監",
+        char_color="#5dade2",
+        char_img="images/char_c.png",
+        records=[
+            ("第一問題：給予九十天外交緩衝期並確立期滿強制開採", c_motive, c_choice1_quote),
+            ("第二問題：推土機衝突後批准空襲前最後一小時撤離通牒", c_motive2, c_choice2_quote)
+        ],
+        final_action=None
+    )
+
+    "【企業開發總監篇・選擇歷史紀錄】\n在「給予九十天外交緩衝期並確立期滿強制開採」這個問題，你的道德動機是：【[c_motive]】。\n在「推土機衝突後批准空襲前最後一小時撤離通牒」那個問題，你的道德動機是：【[c_motive2]】。"
 
     "而在那顆連接人類神經與異星血肉的生化連結艙內，屬於那個殘疾退伍士兵的雙眼，正準備迎來他在這片森林中最漫長、也最痛苦的救贖與撕裂……"
 
@@ -666,21 +697,25 @@ label dev_jump_chap2_colonel:
         "「務實的利益交換：居中建立情報能阻止盲目屠殺，又能合法換回雙腿。」":
             $ m_motive1_type = "utilitarianism"
             $ m_motive1 = "追求各方代價最小化與務實利益平衡"
+            $ m_choice1_quote = "「務實的利益交換：居中建立情報能阻止盲目屠殺，又能合法換回雙腿。」"
             m "（在戰場上，活命與結果才是一切。只要我能居中掌握情報，我就能阻止最壞的屠殺發生，同時拿回屬於我的報酬。這符合所有人的最大利益。）"
 
         "「我依舊是軍人。服從指揮官偵察指令是職責，醫療修復是應得酬勞。」":
             $ m_motive1_type = "deontology"
             $ m_motive1 = "恪守軍人職責契約與安全防衛本分"
+            $ m_choice1_quote = "「我依舊是軍人。服從指揮官偵察指令是職責，醫療修復是應得酬勞。」"
             m "（穿上了這身軍裝，我的宣誓就依然有效。上校是基地的合法防衛指揮官，執行他的偵察任務合情合理，這不是背叛，而是職責所在。）"
 
         "「殘廢苟活談何尊嚴？我必須先重新成為完整站立的人，才配談道德。」":
             $ m_motive1_type = "virtue_ethics"
             $ m_motive1 = "重拾完整人格自尊與擺脫殘缺之境"
+            $ m_choice1_quote = "「殘廢苟活談何尊嚴？我必須先重新成為完整站立的人，才配談道德。」"
             m "（當你連自己的生理自尊都無法掌控時，所有的道德都是虛偽的。我要站起來，只有重新擁有一具健全的軀體，我才能主宰我作為一個人的命運。）"
 
         "「哥哥死得太無辜。為了延續對他的愛，我必須站起來替他走完這條路。」":
             $ m_motive1_type = "christian_agape"
             $ m_motive1 = "出於對孿生亡兄未竟遺願的愛與延續"
+            $ m_choice1_quote = "「哥哥死得太無辜。為了延續對他的愛，我必須站起來替他走完這條路。」"
             m "（哥哥在那個骯髒的紙箱裡化成了灰燼，但他未完成的夢想還活著。不管背負怎樣的罵名，我都必須代替他走進那片森林，用這條命去完成他對這片土地的愛。）"
 
     ## 決策生效
@@ -1187,21 +1222,25 @@ label dev_jump_chap2_final_decision:
         "「唯有全力阻止這場單方面屠殺、保護整個生態網絡，才能避免雙方陷入萬劫不復的毀滅。」":
             $ m_motive2_type = "utilitarianism"
             $ m_motive2 = "阻止生態網絡崩潰與最大化雙方存續利益"
+            $ m_choice2_quote = "「唯有全力阻止這場單方面屠殺、保護整個生態網絡，才能避免雙方陷入萬劫不復的毀滅。」"
             ma "（一雙腿的利益，絕不能建立在數百條性命與整座森林神經網路的毀滅之上。唯有挺身止戰，才能避免最慘烈的浩劫。）"
 
         "「我是因欺瞞而欠下血債的人。無論代價為何，為自己的背信贖罪並保護無辜是絕對義務。」":
             $ m_motive2_type = "deontology"
             $ m_motive2 = "承擔欺瞞之罪責並履行保護無辜者的絕對義務"
+            $ m_choice2_quote = "「我是因欺瞞而欠下血債的人。無論代價為何，為自己的背信贖罪並保護無辜是絕對義務。」"
             ma "（是我親手洩漏了巨木的結構。君子與戰士的榮譽不容許我帶著骯髒的血債逃回地球，我必須為自己的行為負起全部責任。）"
 
         "「就算在人類身體裡雙腿殘廢，我絕不能讓靈魂也跪著；唯有勇敢站在弱者身前才配稱為人。」":
             $ m_motive2_type = "virtue_ethics"
             $ m_motive2 = "拒絕靈魂淪喪，以無畏勇氣捍衛良知與人格完整"
+            $ m_choice2_quote = "「就算在人類身體裡雙腿殘廢，我絕不能讓靈魂也跪著；唯有勇敢站在弱者身前才配稱為人。」"
             ma "（如果為了換回一雙肉體的腿，卻出賣了接納我的族人，那我這輩子在良知上將徹底殘廢。真正的站立，是靈魂的不屈。）"
 
         "「他們給了我第二次生命與無私的愛；為了守護所愛之人，我願捨棄自己的一切。」":
             $ m_motive2_type = "christian_agape"
             $ m_motive2 = "出於對部族與伴侶的深切大愛，甘願自我犧牲"
+            $ m_choice2_quote = "「他們給了我第二次生命與無私的愛；為了守護所愛之人，我願捨棄自己的一切。」"
             ma "（她教會了我如何去愛這個世界。面對即將降臨的烈火，愛讓我無法獨活，我願意用我的一切去換取他們的生機。）"
 
     ## --------------------------------------------------------------------------
@@ -1220,6 +1259,7 @@ label dev_jump_chap2_final_decision:
 
         "【決意叛變】徹底背棄人類財團與雙腿契約，拾起戰弓，與森林部族並肩死戰！":
             $ m_rebel_choice = "rebel"
+            $ m_rebel_desc = "【決意叛變】徹底背棄人類財團與雙腿契約，拾起戰弓，與森林部族並肩死戰"
 
             ma "（我一把抓起地上的重木戰弓，站起身來，將三支塗滿毒液的長箭扣在指間！）"
 
@@ -1239,6 +1279,7 @@ label dev_jump_chap2_final_decision:
 
         "【拒絕叛變】不向人類同袍拔刀開火，但拼死留在火海中，帶領部族婦孺撤往地底避難！":
             $ m_rebel_choice = "no_rebel"
+            $ m_rebel_desc = "【拒絕叛變】不向人類同袍拔刀開火，但拼死留在火海中帶領部族婦孺撤離"
 
             ma "（我看著地上的戰弓，最終緩緩推開了它，但沒有後退半步，而是轉身抱起了樹洞旁兩個嚇得發抖的部族孩童。）"
 
@@ -1258,6 +1299,24 @@ label dev_jump_chap2_final_decision:
 
     scene black
     with fade
+
+label dev_jump_chap2_summary:
+    scene black
+    with dissolve
+
+    call screen moral_summary_card(
+        chapter_title="第二章：退伍士兵篇",
+        char_name="退伍士兵",
+        char_color="#eb984e",
+        char_img="images/char_ma.png",
+        records=[
+            ("第一問題：面對上校的雙腿修復交易，答應配合潛入部族刺探情報", m_motive1, m_choice1_quote),
+            ("第二問題：巨木毀滅前夕，在雙腿契約、軍人身分與部族存亡間的靈魂準則", m_motive2, m_choice2_quote)
+        ],
+        final_action=("終極行動抉擇：面對人類武裝艦隊壓境", m_rebel_desc)
+    )
+
+    "【退伍士兵篇・選擇歷史紀錄】\n在「面對上校的雙腿修復交易並潛入部族刺探情報」這個問題，你的道德動機是：【[m_motive1]】。\n在「巨木毀滅前夕面對雙腿契約、軍人身分與部族存亡」那個問題，你的道德動機是：【[m_motive2]】。\n而在「人類武裝艦隊壓境時的終極行動」中，你的抉擇是：【[m_rebel_desc]】。"
 
     "【第二章：退伍士兵篇（完整章節）結束，所有倫理動機與叛變抉擇已登錄鏡像核心】"
 

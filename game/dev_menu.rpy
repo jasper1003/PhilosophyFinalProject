@@ -84,6 +84,17 @@ screen chapter_select():
                             text "▶ 1-3. 第 90 天：推土機衝突與最後通牒" size 15 color "#ecf0f1" bold True
                             text "推土機推進邊界、上校強硬請戰、殘廢老兵被捕、第二道德決策。" size 12 color "#7f8c8d"
 
+                    ## 節點 4
+                    button:
+                        xfill True
+                        background Solid("#141e28")
+                        hover_background Solid("#243342")
+                        padding (12, 10)
+                        action (Start("dev_jump_chap1_summary") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap1_summary")])
+                        vbox:
+                            text "▶ 1-4. 總監篇結算：道德動機歷史紀錄" size 15 color "#f9e79f" bold True
+                            text "檢視企業開發總監兩個道德問題的選擇與底層動機總結面板。" size 12 color "#7f8c8d"
+
 
                 ## 第二欄：第二章【退伍士兵篇】
                 vbox:
@@ -194,3 +205,92 @@ screen chapter_select():
                                 vbox:
                                     text "▶ 2-8. 最後一小時：叛變或順從的終極抉擇" size 14 color "#ecf0f1" bold True
                                     text "上校最後威逼利誘、重返巨木撤離警告、第二倫理動機與是否叛變抉擇。" size 11 color "#7f8c8d"
+
+                            ## 節點 9
+                            button:
+                                xfill True
+                                background Solid("#141e28")
+                                hover_background Solid("#243342")
+                                padding (12, 8)
+                                action (Start("dev_jump_chap2_summary") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap2_summary")])
+                                vbox:
+                                    text "▶ 2-9. 老兵篇結算：道德動機歷史紀錄" size 14 color "#f9e79f" bold True
+                                    text "檢視退伍士兵兩個道德問題與終極行動的選擇總結面板。" size 11 color "#7f8c8d"
+
+
+## ==============================================================================
+## 角色故事線結算：道德抉擇與動機歷史紀錄面板
+## ==============================================================================
+screen moral_summary_card(chapter_title, char_name, char_color, char_img, records, final_action=None):
+    modal True
+
+    ## 螢幕暗下之半透明深邃背景
+    add Solid("#06090ef2")
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 980
+        background Frame(Solid("#101822f5"), 12, 12)
+        padding (36, 30)
+
+        vbox:
+            spacing 18
+            xfill True
+
+            ## 頂部角色資訊與標題列
+            hbox:
+                spacing 20
+                yalign 0.5
+                frame:
+                    background Solid("#182432")
+                    padding (6, 6)
+                    add Transform(char_img, zoom=0.11, nearest=True)
+                vbox:
+                    yalign 0.5
+                    spacing 4
+                    text "【[chapter_title] — 選擇歷史紀錄】" size 25 color char_color bold True
+                    text "你在「[char_name]」的故事線中，面對道德困境所留下的抉擇軌跡與內在動機：" size 15 color "#a0b2c6"
+
+            frame:
+                xfill True
+                ysize 2
+                background Solid("#283a4e")
+
+            ## 各個道德問題的選擇與動機回顧
+            for idx, item in enumerate(records):
+                $ q_title, motive_text, quote_text = item
+                frame:
+                    xfill True
+                    background Solid("#15202d")
+                    padding (20, 14)
+                    vbox:
+                        spacing 6
+                        text "◆ 在「[q_title]」這個問題中：" size 16 color "#85c1e9" bold True
+                        text "你的道德動機是：【[motive_text]】" size 19 color "#f9e79f" bold True
+                        if quote_text:
+                            text "當時的選擇：[quote_text]" size 14 color "#bdc3c7"
+
+            ## 若有終極行動分歧（如退伍士兵的叛變／不叛變抉擇）
+            if final_action is not None:
+                $ act_title, act_desc = final_action
+                frame:
+                    xfill True
+                    background Solid("#1e1a24")
+                    padding (20, 14)
+                    vbox:
+                        spacing 6
+                        text "◆ 在「[act_title]」的關鍵時刻：" size 16 color "#f5b041" bold True
+                        text "你的最終決定是：[act_desc]" size 18 color "#ffffff" bold True
+
+            null height 6
+
+            ## 底部確認按鈕
+            button:
+                xalign 0.5
+                background Solid("#1f3a52")
+                hover_background Solid("#2e5678")
+                padding (36, 12)
+                action Return()
+                text "▶ 確認選擇歷史紀錄，繼續劇情" size 18 color "#ecf0f1" bold True
+
