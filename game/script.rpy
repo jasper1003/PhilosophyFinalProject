@@ -84,6 +84,7 @@ image bg shuttle_window = "images/bg_orbit_view.png"
 image bg hangar_tarmac = "images/bg_hangar_tarmac.png"
 image bg ground_base = "images/bg_base_command.png"
 image bg base_command = "images/bg_base_command.png"
+image bg gym = "images/bg_gym.png"
 image bg forest_window = "images/bg_window_jungle.png"
 image bg bulldozer_incident = "images/bg_bulldozer_incident.png"
 
@@ -592,10 +593,10 @@ label dev_jump_chap2_colonel:
 
     "『下士，上校要見你。現在。』"
 
-    scene bg base_command
+    scene bg gym
     with fade
 
-    "基地的安全指揮作戰室一角，被改裝成了私人重裝訓練場。"
+    "基地的安全部隊重裝訓練室內，粗獷的鋼骨結構下瀰漫著汗水與冷硬機油的氣息。"
 
     "金屬槓鈴碰撞的巨響在空曠的鋼骨結構中迴盪。一個赤裸著上半身、渾身肌肉虯結的身影，正在高強度推舉著超過兩百公斤的重物。"
 
