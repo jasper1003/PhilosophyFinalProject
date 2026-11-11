@@ -40,60 +40,134 @@ screen chapter_select():
                 spacing 40
                 xfill True
 
-                ## 第一欄：第一章【開發總監篇】
+                ## 第一欄：第一章【開發總監篇】與 第三章【原住民公主篇】
                 vbox:
                     xsize 500
-                    spacing 10
+                    spacing 8
 
-                    frame:
-                        xfill True
-                        background Solid("#182430")
-                        padding (12, 8)
-                        text "第一章：開發總監篇（決策鏡像）" size 18 color "#5dade2" bold True
+                    viewport:
+                        xsize 500
+                        ysize 520
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
 
-                    ## 節點 1
-                    button:
-                        xfill True
-                        background Solid("#141e28")
-                        hover_background Solid("#243342")
-                        padding (12, 10)
-                        action (Start("start") if main_menu else [Hide("chapter_select"), Jump("start")])
                         vbox:
-                            text "▶ 1-1. 序章：休眠甦醒與軌道觀測" size 16 color "#ecf0f1" bold True
-                            text "穿梭艦低溫解凍、氣態巨行星與翡翠衛星初見、地球危機回憶。" size 13 color "#7f8c8d"
+                            spacing 8
+                            xfill True
 
-                    ## 節點 2
-                    button:
-                        xfill True
-                        background Solid("#141e28")
-                        hover_background Solid("#243342")
-                        padding (12, 10)
-                        action (Start("dev_jump_chap1_dec1") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap1_dec1")])
-                        vbox:
-                            text "▶ 1-2. 地面基地：科學家對峙與 90 天通牒" size 16 color "#ecf0f1" bold True
-                            text "抵達基地停機坪、超導礦石、首席科學家爭執、第一道德決策。" size 13 color "#7f8c8d"
+                            frame:
+                                xfill True
+                                background Solid("#182430")
+                                padding (12, 8)
+                                text "第一章：開發總監篇（決策鏡像）" size 18 color "#5dade2" bold True
 
-                    ## 節點 3
-                    button:
-                        xfill True
-                        background Solid("#141e28")
-                        hover_background Solid("#243342")
-                        padding (12, 10)
-                        action (Start("dev_jump_chap1_dec2") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap1_dec2")])
-                        vbox:
-                            text "▶ 1-3. 第 90 天：推土機衝突與最後通牒" size 16 color "#ecf0f1" bold True
-                            text "推土機推進邊界、上校強硬請戰、殘廢老兵被捕、第二道德決策。" size 13 color "#7f8c8d"
+                            ## 節點 1
+                            button:
+                                xfill True
+                                background Solid("#141e28")
+                                hover_background Solid("#243342")
+                                padding (12, 8)
+                                action (Start("start") if main_menu else [Hide("chapter_select"), Jump("start")])
+                                vbox:
+                                    text "▶ 1-1. 序章：休眠甦醒與軌道觀測" size 15 color "#ecf0f1" bold True
+                                    text "穿梭艦低溫解凍、氣態巨行星與翡翠衛星初見、地球危機回憶。" size 12 color "#7f8c8d"
 
-                    ## 節點 4
-                    button:
-                        xfill True
-                        background Solid("#141e28")
-                        hover_background Solid("#243342")
-                        padding (12, 10)
-                        action (Start("dev_jump_chap1_summary") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap1_summary")])
-                        vbox:
-                            text "▶ 1-4. 總監篇結算：道德動機歷史紀錄" size 16 color "#f9e79f" bold True
-                            text "檢視企業開發總監兩個道德問題的選擇與底層動機總結面板。" size 13 color "#7f8c8d"
+                            ## 節點 2
+                            button:
+                                xfill True
+                                background Solid("#141e28")
+                                hover_background Solid("#243342")
+                                padding (12, 8)
+                                action (Start("dev_jump_chap1_dec1") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap1_dec1")])
+                                vbox:
+                                    text "▶ 1-2. 地面基地：科學家對峙與 90 天通牒" size 15 color "#ecf0f1" bold True
+                                    text "抵達基地停機坪、超導礦石、首席科學家爭執、第一道德決策。" size 12 color "#7f8c8d"
+
+                            ## 節點 3
+                            button:
+                                xfill True
+                                background Solid("#141e28")
+                                hover_background Solid("#243342")
+                                padding (12, 8)
+                                action (Start("dev_jump_chap1_dec2") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap1_dec2")])
+                                vbox:
+                                    text "▶ 1-3. 第 90 天：推土機衝突與最後通牒" size 15 color "#ecf0f1" bold True
+                                    text "推土機推進邊界、上校強硬請戰、殘廢老兵被捕、第二道德決策。" size 12 color "#7f8c8d"
+
+                            ## 節點 4
+                            button:
+                                xfill True
+                                background Solid("#141e28")
+                                hover_background Solid("#243342")
+                                padding (12, 8)
+                                action (Start("dev_jump_chap1_summary") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap1_summary")])
+                                vbox:
+                                    text "▶ 1-4. 總監篇結算：選擇歷史紀錄" size 15 color "#f9e79f" bold True
+                                    text "檢視企業開發總監兩個問題的選擇總結面板。" size 12 color "#7f8c8d"
+
+                            null height 6
+
+                            frame:
+                                xfill True
+                                background Solid("#182430")
+                                padding (12, 8)
+                                text "第三章：原住民公主篇（娜蒂莉）" size 18 color "#7dcea0" bold True
+
+                            ## 節點 3-1
+                            button:
+                                xfill True
+                                background Solid("#141e28")
+                                hover_background Solid("#243342")
+                                padding (12, 8)
+                                action (Start("dev_jump_chap3_act1") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap3_act1")])
+                                vbox:
+                                    text "▶ 3-1. 第一幕：森林的警訊（選擇一）" size 15 color "#ecf0f1" bold True
+                                    text "巡視森林邊緣、發現人類越界開採、面對擴大開採的第一抉擇。" size 12 color "#7f8c8d"
+
+                            ## 節點 3-2
+                            button:
+                                xfill True
+                                background Solid("#141e28")
+                                hover_background Solid("#243342")
+                                padding (12, 8)
+                                action (Start("dev_jump_chap3_act2") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap3_act2")])
+                                vbox:
+                                    text "▶ 3-2. 第二幕：領導者的孤獨" size 15 color "#ecf0f1" bold True
+                                    text "部落夜晚分歧、與父親（酋長）對談勇氣與等待的實踐智慧。" size 12 color "#7f8c8d"
+
+                            ## 節點 3-3
+                            button:
+                                xfill True
+                                background Solid("#141e28")
+                                hover_background Solid("#243342")
+                                padding (12, 8)
+                                action (Start("dev_jump_chap3_act3") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap3_act3")])
+                                vbox:
+                                    text "▶ 3-3. 第三幕：最後的談判（選擇二）" size 15 color "#ecf0f1" bold True
+                                    text "森林與基地交界處、人類代表提出三項條件協議、第二抉擇。" size 12 color "#7f8c8d"
+
+                            ## 節點 3-4
+                            button:
+                                xfill True
+                                background Solid("#141e28")
+                                hover_background Solid("#243342")
+                                padding (12, 8)
+                                action (Start("dev_jump_chap3_act4") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap3_act4")])
+                                vbox:
+                                    text "▶ 3-4. 第四幕：勇氣的真正意義" size 15 color "#ecf0f1" bold True
+                                    text "部落高處遠眺森林、與傑克對話、體悟承擔代價的領導者勇氣。" size 12 color "#7f8c8d"
+
+                            ## 節點 3-5
+                            button:
+                                xfill True
+                                background Solid("#141e28")
+                                hover_background Solid("#243342")
+                                padding (12, 8)
+                                action (Start("dev_jump_chap3_summary") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap3_summary")])
+                                vbox:
+                                    text "▶ 3-5. 公主篇結算：選擇歷史紀錄" size 15 color "#f9e79f" bold True
+                                    text "檢視娜蒂莉兩個問題的選擇歷史紀錄面板。" size 12 color "#7f8c8d"
 
 
                 ## 第二欄：第二章【退伍士兵篇】

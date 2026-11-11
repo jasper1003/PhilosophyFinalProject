@@ -20,6 +20,14 @@ define sa = Character("首席科學家", color="#85929e", image="sa")
 define q = Character("上校", color="#c0392b", image="q")
 define ai = Character("主控系統", color="#7f8c8d", image="ai")
 
+# 第三章：原住民公主（娜蒂莉）篇角色定義
+define neytiri = Character("娜蒂莉", color="#7dcea0", image="p")
+define warrior = Character("戰士", color="#edbb99", image="n")
+define clan_member = Character("另一名族人", color="#a3e4d7")
+define chief = Character("酋長", color="#f5b041")
+define human_rep = Character("人類代表", color="#85c1e9", image="c")
+define jake = Character("傑克", color="#5dade2", image="ma")
+
 # ==========================================
 # 立繪與頭像設定（像素銳利化、表情與服裝差分）
 # ==========================================
@@ -124,6 +132,14 @@ default m_motive2_type = ""
 default m_choice2_quote = ""
 default m_rebel_choice = ""
 default m_rebel_desc = "（尚未進行此抉擇）"
+
+# 第三章：原住民公主（娜蒂莉）選擇記錄變數
+default p_motive1 = "（尚未進行此抉擇）"
+default p_motive1_type = ""
+default p_choice1_quote = ""
+default p_motive2 = "（尚未進行此抉擇）"
+default p_motive2_type = ""
+default p_choice2_quote = ""
 
 label start:
 
@@ -796,8 +812,201 @@ label dev_jump_chap2_summary:
         final_action=None
     )
 
-    "【第二章：退伍士兵篇（完整章節）結束，所有倫理動機已登錄鏡像核心】"
+    jump chapter3_princess
+
+# ==============================================================================
+# 第三章：原住民公主篇（娜蒂莉）——勇氣與實踐智慧的試煉
+# ==============================================================================
+label chapter3_princess:
+
+    scene black
+    with fade
+
+    ## --------------------------------------------------------------------------
+    ## 第一幕：森林的警訊
+    ## 場景：森林邊緣，白天。
+    ## --------------------------------------------------------------------------
+label dev_jump_chap3_act1:
+    scene bg jungle_day
+    with fade
+
+    "娜蒂莉與幾名族人巡視森林時，發現人類的開採設備已經越過原本的範圍。附近的動物受到驚擾，部分森林也遭到破壞。"
+
+    scene bg bulldozer_incident
+    with dissolve
+
+    show char n at left
+    show char p at right
+    with dissolve
+
+    "一名戰士憤怒地向她報告。"
+
+    warrior "「他們已經不再遵守承諾了！我們不能繼續等待，應該立刻阻止他們。」"
+
+    clan_member "「可是，如果我們現在發動攻擊，人類可能會帶來更多武器。我們的孩子和長者都會受到威脅。」"
+
+    neytiri "「如果我們不採取行動，難道就要看著他們一步步奪走我們的家園嗎？」"
+
+    "此時，娜蒂莉必須決定部落接下來的方向。"
+
+    menu:
+        "選擇一：面對人類擴大開採，你會怎麼做？"
+
+        "A. 立即號召戰士反抗，不能再容忍人類侵入。":
+            $ p_motive1_type = "act_immediately"
+            $ p_motive1 = "立即號召戰士反抗，捍衛家園原則"
+            $ p_choice1_quote = "「A. 立即號召戰士反抗，不能再容忍人類侵入。」"
+
+        "B. 暫時避免衝突，優先保護族人的安全。":
+            $ p_motive1_type = "protect_safety"
+            $ p_motive1 = "暫時避免衝突，以族人生命安全為重"
+            $ p_choice1_quote = "「B. 暫時避免衝突，優先保護族人的安全。」"
+
+        "C. 派人與人類交涉，同時做好防範準備。":
+            $ p_motive1_type = "phronesis_negotiate"
+            $ p_motive1 = "審慎交涉並同步建立防禦準備"
+            $ p_choice1_quote = "「C. 派人與人類交涉，同時做好防範準備。」"
+
+    hide char n
+    hide char p
+    with dissolve
+
+    ## --------------------------------------------------------------------------
+    ## 第二幕：領導者的孤獨
+    ## 場景：部落中央，夜晚。
+    ## --------------------------------------------------------------------------
+label dev_jump_chap3_act2:
+    scene bg hometree_interior
+    with fade
+
+    "娜蒂莉與部落長者討論後，發現部落內部已經出現嚴重分歧。"
+
+    "有些族人認為她應該立即帶領大家反抗，有些人則認為她應該避免戰爭。"
+
+    show char p at right
+    with dissolve
+
+    "她的父親提醒她："
+
+    chief "「你不只是一名戰士。你的決定會影響所有族人的生命。」"
+
+    neytiri "「可是，如果我只考慮他們的安全，卻讓人類繼續破壞森林，我又怎麼能稱自己為部落的守護者？」"
+
+    chief "「勇氣不是不害怕，也不是永遠向前。你必須知道什麼時候應該堅持，什麼時候應該等待。」"
+
+    neytiri "「那如果等待本身，就是讓敵人繼續傷害我們呢？」"
+
+    chief "「這就是為什麼領導者不能只依靠憤怒做決定。」"
+
+    hide char p
+    with dissolve
+
+    ## --------------------------------------------------------------------------
+    ## 第三幕：最後的談判
+    ## 場景：森林與人類基地交界處。
+    ## --------------------------------------------------------------------------
+label dev_jump_chap3_act3:
+    scene bg forest_window
+    with fade
+
+    "人類派出代表，希望娜蒂莉接受新的協議。"
+
+    "人類提出：\n1. 暫停部分開採作業。\n2. 保留一定範圍作為納美人的生活領域。\n3. 要求納美人允許人類繼續使用部分森林資源。"
+
+    "但娜蒂莉知道，這份協議並沒有真正保障部落的長期生存。"
+
+    show char c at left
+    show char p at right
+    with dissolve
+
+    "談判代表說："
+
+    human_rep "「我們已經做出讓步了。地球上有很多人需要這些資源，你們不可能要求我們完全放棄。」"
+
+    neytiri "「你們稱這是讓步，但你們是否曾經問過我們，為什麼你們有權決定森林可以被拿走多少？」"
+
+    human_rep "「如果完全沒有合作的可能，雙方只會繼續受到傷害。」"
+
+    "娜蒂莉必須決定是否接受協議。"
+
+    menu:
+        "選擇二：你會如何回應人類的協議？"
+
+        "A. 拒絕協議，要求人類停止所有開採。":
+            $ p_motive2_type = "reject_all"
+            $ p_motive2 = "拒絕妥協，要求人類停止所有開採"
+            $ p_choice2_quote = "「A. 拒絕協議，要求人類停止所有開採。」"
+
+        "B. 接受協議，先確保族人目前的安全。":
+            $ p_motive2_type = "accept_safety"
+            $ p_motive2 = "接受協議，優先確保族人當下安全"
+            $ p_choice2_quote = "「B. 接受協議，先確保族人目前的安全。」"
+
+        "C. 要求重新談判，提出明確的領域界線與違約責任。":
+            $ p_motive2_type = "renegotiate_terms"
+            $ p_motive2 = "要求重新談判，確立領域界線與違約責任"
+            $ p_choice2_quote = "「C. 要求重新談判，提出明確的領域界線與違約責任。」"
+
+    hide char c
+    hide char p
+    with dissolve
+
+    ## --------------------------------------------------------------------------
+    ## 第四幕：勇氣的真正意義
+    ## 場景：部落高處，可以看見遠方的森林。
+    ## --------------------------------------------------------------------------
+label dev_jump_chap3_act4:
+    scene bg floating_mountains
+    with fade
+
+    "娜蒂莉回到部落，發現族人仍在等待她的決定。"
+
+    "她看著森林，想起自己從小學習的傳統，以及那些曾經教導她如何與潘朵拉共同生活的人。"
+
+    "她也想起部落裡的孩子。"
+
+    show char p at right
+    show char ma at left
+    with dissolve
+
+    neytiri "「我一直以為，只要有足夠的勇氣，就能保護我們所珍惜的一切。」"
+
+    jake "「那現在呢？」"
+
+    neytiri "「現在我知道，勇氣不只是敢於戰鬥。它也可能是承認自己的判斷不一定正確，願意承擔保護族人的責任。」"
+
+    jake "「那你已經知道該怎麼做了嗎？」"
+
+    neytiri "「我不知道。但我必須做出選擇，而且不能假裝這個選擇沒有代價。」"
+
+    hide char ma
+    hide char p
+    with dissolve
+
+    "娜蒂莉轉身走向部落。"
+
+    scene black
+    with fade
+
+label dev_jump_chap3_summary:
+    scene black
+    with dissolve
+
+    call screen moral_summary_card(
+        chapter_title="第三章：原住民公主篇",
+        char_name="娜蒂莉",
+        char_color="#7dcea0",
+        char_img="images/char_p.png",
+        records=[
+            ("第一問題：面對人類擴大開採，你會怎麼做？", p_motive1, p_choice1_quote),
+            ("第二問題：你會如何回應人類的協議？", p_motive2, p_choice2_quote)
+        ],
+        final_action=None
+    )
+
+    "【原住民公主（娜蒂莉）故事線結束】"
 
     return
+
 
 
