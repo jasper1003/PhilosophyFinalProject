@@ -112,7 +112,7 @@ screen chapter_select():
                                 xfill True
                                 background Solid("#182430")
                                 padding (12, 8)
-                                text "第三章：原住民公主篇（娜蒂莉）" size 18 color "#7dcea0" bold True
+                                text "第三章：原住民公主篇" size 18 color "#7dcea0" bold True
 
                             ## 節點 3-1
                             button:
@@ -156,7 +156,7 @@ screen chapter_select():
                                 action (Start("dev_jump_chap3_act4") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap3_act4")])
                                 vbox:
                                     text "▶ 3-4. 第四幕：勇氣的真正意義" size 15 color "#ecf0f1" bold True
-                                    text "部落高處遠眺森林、與傑克對話、體悟承擔代價的領導者勇氣。" size 12 color "#7f8c8d"
+                                    text "部落高處遠眺森林、與退伍士兵對話、體悟承擔代價的領導者勇氣。" size 12 color "#7f8c8d"
 
                             ## 節點 3-5
                             button:
@@ -167,7 +167,7 @@ screen chapter_select():
                                 action (Start("dev_jump_chap3_summary") if main_menu else [Hide("chapter_select"), Jump("dev_jump_chap3_summary")])
                                 vbox:
                                     text "▶ 3-5. 公主篇結算：選擇歷史紀錄" size 15 color "#f9e79f" bold True
-                                    text "檢視娜蒂莉兩個問題的選擇歷史紀錄面板。" size 12 color "#7f8c8d"
+                                    text "檢視原住民公主兩個問題的選擇歷史紀錄面板。" size 12 color "#7f8c8d"
 
 
                 ## 第二欄：第二章【退伍士兵篇】

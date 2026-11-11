@@ -9,7 +9,7 @@ define m = Character("退伍士兵", color="#8fa98f", image="m")
 define ma = Character("退伍士兵", color="#5dade2", image="ma")
 
 # 3. 原住民首領之女（翡翠綠：生態共感、血統與神聖信條）
-define p = Character("部族繼承人", color="#7dcea0", image="p")
+define p = Character("原住民公主", color="#7dcea0", image="p")
 
 # 4. 原住民平民（赭黃色：無名個體、生存直覺與平凡視角）
 define n = Character("部族獵手", color="#edbb99", image="n")
@@ -20,13 +20,11 @@ define sa = Character("首席科學家", color="#85929e", image="sa")
 define q = Character("上校", color="#c0392b", image="q")
 define ai = Character("主控系統", color="#7f8c8d", image="ai")
 
-# 第三章：原住民公主（娜蒂莉）篇角色定義
-define neytiri = Character("娜蒂莉", color="#7dcea0", image="p")
+# 第三章：原住民公主篇配角定義
 define warrior = Character("戰士", color="#edbb99", image="n")
 define clan_member = Character("另一名族人", color="#a3e4d7")
 define chief = Character("酋長", color="#f5b041")
 define human_rep = Character("人類代表", color="#85c1e9", image="c")
-define jake = Character("傑克", color="#5dade2", image="ma")
 
 # ==========================================
 # 立繪與頭像設定（像素銳利化、表情與服裝差分）
@@ -133,7 +131,7 @@ default m_choice2_quote = ""
 default m_rebel_choice = ""
 default m_rebel_desc = "（尚未進行此抉擇）"
 
-# 第三章：原住民公主（娜蒂莉）選擇記錄變數
+# 第三章：原住民公主選擇記錄變數
 default p_motive1 = "（尚未進行此抉擇）"
 default p_motive1_type = ""
 default p_choice1_quote = ""
@@ -180,7 +178,7 @@ label dev_jump_chap1_dec1:
 
     c stern "科學院在這裡駐紮了四年，花掉四億八千萬建學校、教語言，結果他們的搬遷同意率依舊是零。地球電網的失溫名單上，每一秒都有人在死去。"
 
-    s "再給外交途徑一點時間！我們的「阿凡達」神經載體專案已經就緒，接替亡兄簽約的那名退伍海陸士兵基因匹配完美，只要讓他透過載體融入部族——"
+    s "再給外交途徑一點時間！我們的「異星神經載體」專案已經就緒，接替亡兄簽約的那名退伍海陸士兵基因匹配完美，只要讓他透過載體融入部族——"
 
     c "我給你們最後三個月。九十天後，如果他們仍不搬遷，重型推土機隊就啟動強制清除。"
 
@@ -815,7 +813,7 @@ label dev_jump_chap2_summary:
     jump chapter3_princess
 
 # ==============================================================================
-# 第三章：原住民公主篇（娜蒂莉）——勇氣與實踐智慧的試煉
+# 第三章：原住民公主篇——勇氣與實踐智慧的試煉
 # ==============================================================================
 label chapter3_princess:
 
@@ -830,7 +828,7 @@ label dev_jump_chap3_act1:
     scene bg jungle_day
     with fade
 
-    "娜蒂莉與幾名族人巡視森林時，發現人類的開採設備已經越過原本的範圍。附近的動物受到驚擾，部分森林也遭到破壞。"
+    "原住民公主與幾名族人巡視森林時，發現人類的開採設備已經越過原本的範圍。附近的動物受到驚擾，部分森林也遭到破壞。"
 
     scene bg bulldozer_incident
     with dissolve
@@ -845,9 +843,9 @@ label dev_jump_chap3_act1:
 
     clan_member "「可是，如果我們現在發動攻擊，人類可能會帶來更多武器。我們的孩子和長者都會受到威脅。」"
 
-    neytiri "「如果我們不採取行動，難道就要看著他們一步步奪走我們的家園嗎？」"
+    p "「如果我們不採取行動，難道就要看著他們一步步奪走我們的家園嗎？」"
 
-    "此時，娜蒂莉必須決定部落接下來的方向。"
+    "此時，原住民公主必須決定部落接下來的方向。"
 
     menu:
         "選擇一：面對人類擴大開採，你會怎麼做？"
@@ -879,7 +877,7 @@ label dev_jump_chap3_act2:
     scene bg hometree_interior
     with fade
 
-    "娜蒂莉與部落長者討論後，發現部落內部已經出現嚴重分歧。"
+    "原住民公主與部落長者討論後，發現部落內部已經出現嚴重分歧。"
 
     "有些族人認為她應該立即帶領大家反抗，有些人則認為她應該避免戰爭。"
 
@@ -890,11 +888,11 @@ label dev_jump_chap3_act2:
 
     chief "「你不只是一名戰士。你的決定會影響所有族人的生命。」"
 
-    neytiri "「可是，如果我只考慮他們的安全，卻讓人類繼續破壞森林，我又怎麼能稱自己為部落的守護者？」"
+    p "「可是，如果我只考慮他們的安全，卻讓人類繼續破壞森林，我又怎麼能稱自己為部落的守護者？」"
 
     chief "「勇氣不是不害怕，也不是永遠向前。你必須知道什麼時候應該堅持，什麼時候應該等待。」"
 
-    neytiri "「那如果等待本身，就是讓敵人繼續傷害我們呢？」"
+    p "「那如果等待本身，就是讓敵人繼續傷害我們呢？」"
 
     chief "「這就是為什麼領導者不能只依靠憤怒做決定。」"
 
@@ -909,11 +907,11 @@ label dev_jump_chap3_act3:
     scene bg forest_window
     with fade
 
-    "人類派出代表，希望娜蒂莉接受新的協議。"
+    "人類派出代表，希望原住民公主接受新的協議。"
 
-    "人類提出：\n1. 暫停部分開採作業。\n2. 保留一定範圍作為納美人的生活領域。\n3. 要求納美人允許人類繼續使用部分森林資源。"
+    "人類提出：\n1. 暫停部分開採作業。\n2. 保留一定範圍作為原住民的生活領域。\n3. 要求原住民允許人類繼續使用部分森林資源。"
 
-    "但娜蒂莉知道，這份協議並沒有真正保障部落的長期生存。"
+    "但原住民公主知道，這份協議並沒有真正保障部落的長期生存。"
 
     show char c at left
     show char p at right
@@ -923,11 +921,11 @@ label dev_jump_chap3_act3:
 
     human_rep "「我們已經做出讓步了。地球上有很多人需要這些資源，你們不可能要求我們完全放棄。」"
 
-    neytiri "「你們稱這是讓步，但你們是否曾經問過我們，為什麼你們有權決定森林可以被拿走多少？」"
+    p "「你們稱這是讓步，但你們是否曾經問過我們，為什麼你們有權決定森林可以被拿走多少？」"
 
     human_rep "「如果完全沒有合作的可能，雙方只會繼續受到傷害。」"
 
-    "娜蒂莉必須決定是否接受協議。"
+    "原住民公主必須決定是否接受協議。"
 
     menu:
         "選擇二：你會如何回應人類的協議？"
@@ -959,7 +957,7 @@ label dev_jump_chap3_act4:
     scene bg floating_mountains
     with fade
 
-    "娜蒂莉回到部落，發現族人仍在等待她的決定。"
+    "原住民公主回到部落，發現族人仍在等待她的決定。"
 
     "她看著森林，想起自己從小學習的傳統，以及那些曾經教導她如何與潘朵拉共同生活的人。"
 
@@ -969,21 +967,21 @@ label dev_jump_chap3_act4:
     show char ma at left
     with dissolve
 
-    neytiri "「我一直以為，只要有足夠的勇氣，就能保護我們所珍惜的一切。」"
+    p "「我一直以為，只要有足夠的勇氣，就能保護我們所珍惜的一切。」"
 
-    jake "「那現在呢？」"
+    ma "「那現在呢？」"
 
-    neytiri "「現在我知道，勇氣不只是敢於戰鬥。它也可能是承認自己的判斷不一定正確，願意承擔保護族人的責任。」"
+    p "「現在我知道，勇氣不只是敢於戰鬥。它也可能是承認自己的判斷不一定正確，願意承擔保護族人的責任。」"
 
-    jake "「那你已經知道該怎麼做了嗎？」"
+    ma "「那你已經知道該怎麼做了嗎？」"
 
-    neytiri "「我不知道。但我必須做出選擇，而且不能假裝這個選擇沒有代價。」"
+    p "「我不知道。但我必須做出選擇，而且不能假裝這個選擇沒有代價。」"
 
     hide char ma
     hide char p
     with dissolve
 
-    "娜蒂莉轉身走向部落。"
+    "原住民公主轉身走向部落。"
 
     scene black
     with fade
@@ -994,7 +992,7 @@ label dev_jump_chap3_summary:
 
     call screen moral_summary_card(
         chapter_title="第三章：原住民公主篇",
-        char_name="娜蒂莉",
+        char_name="原住民公主",
         char_color="#7dcea0",
         char_img="images/char_p.png",
         records=[
@@ -1004,7 +1002,7 @@ label dev_jump_chap3_summary:
         final_action=None
     )
 
-    "【原住民公主（娜蒂莉）故事線結束】"
+    "【第三章：原住民公主篇結束】"
 
     return
 
