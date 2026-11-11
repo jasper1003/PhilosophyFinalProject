@@ -250,14 +250,14 @@ screen moral_summary_card(chapter_title, char_name, char_color, char_img, record
                     yalign 0.5
                     spacing 4
                     text "【[chapter_title] — 選擇歷史紀錄】" size 28 color char_color bold True
-                    text "你在「[char_name]」的故事線中，面對道德困境所留下的抉擇軌跡與內在動機：" size 17 color "#a0b2c6"
+                    text "你在「[char_name]」的故事線中，面對道德困境所留下的抉擇軌跡：" size 17 color "#a0b2c6"
 
             frame:
                 xfill True
                 ysize 2
                 background Solid("#283a4e")
 
-            ## 各個道德問題的選擇與動機回顧
+            ## 各個道德問題的選擇回顧
             for idx, item in enumerate(records):
                 $ q_title, motive_text, quote_text = item
                 frame:
@@ -265,11 +265,12 @@ screen moral_summary_card(chapter_title, char_name, char_color, char_img, record
                     background Solid("#15202d")
                     padding (20, 14)
                     vbox:
-                        spacing 6
+                        spacing 8
                         text "◆ 在「[q_title]」這個問題中：" size 18 color "#85c1e9" bold True
-                        text "你的道德動機是：【[motive_text]】" size 22 color "#f9e79f" bold True
                         if quote_text:
-                            text "當時的選擇：[quote_text]" size 16 color "#bdc3c7"
+                            text "你的選擇：[quote_text]" size 20 color "#f9e79f" bold True
+                        else:
+                            text "你的選擇：（尚未進行此抉擇）" size 20 color "#7f8c8d"
 
             ## 若有終極行動分歧（如退伍士兵的叛變／不叛變抉擇）
             if final_action is not None:
